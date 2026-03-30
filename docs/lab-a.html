@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab A: Configure FictoCorp — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link active" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Lab A: Configure FictoCorp Industries</h1>
+<div class="lab-banner">
+  <span class="lab-type">🔬 Hands-On Lab</span>
+  <span class="lab-duration">⏱ Estimated time: 45–60 minutes</span>
+</div>
+
+<h2>Objectives</h2>
+<p>By the end of this lab you will be able to:</p>
+<ul>
+  <li>Navigate the Application Framework configuration wizard end-to-end</li>
+  <li>Answer all Top-Level and FP configuration questions for a real customer scenario</li>
+  <li>Configure the hierarchy screen with correct levels and naming</li>
+  <li>Generate the IFP application and review the generation logs</li>
+</ul>
+
+<h2>Customer Requirements Brief — FictoCorp Phase 1</h2>
+<div class="callout callout-note"><strong>📝 Scope for Lab A</strong><p>Phase 1 deploys Revenue/COGS + OpEx + Headcount only. No CapEx model, no Balance Sheet. Lab B adds full 3-statement scope.</p></div>
+<table><thead><tr><th>Requirement</th><th>Decision</th></tr></thead><tbody><tr><td>Entity name</td><td>Entity (2 levels: Total FictoCorp → USA / EMEA)</td></tr><tr><td>Department</td><td>Yes — 'Department' (3 levels: All Depts → Function → Cost Center)</td></tr><tr><td>Geography</td><td>No — exclude</td></tr><tr><td>Functional Area</td><td>No — exclude</td></tr><tr><td>Vendor</td><td>No — exclude</td></tr><tr><td>Headcount</td><td>Option A: IFP Role-Based HC Model</td></tr><tr><td>Multi-currency</td><td>Yes — USD base, USD/EUR/GBP reporting</td></tr><tr><td>Balance Sheet</td><td>No — exclude for Phase 1</td></tr><tr><td>Cash Flow</td><td>No — exclude for Phase 1</td></tr><tr><td>CapEx</td><td>Option B: GL-Level in FP (delete CE after generation)</td></tr><tr><td>Margin planning</td><td>In FP only</td></tr><tr><td>Product dimension</td><td>Yes — 'Product' (2 levels: All Products → Hardware / Software)</td></tr><tr><td>Customer dimension</td><td>Yes — 'Customer' (2 levels: All Customers → Enterprise / Commercial)</td></tr><tr><td>IS list name</td><td>Planning Account IS Hierarchy (default)</td></tr><tr><td>Expense planning</td><td>Yes — dimensionality: Entity + Department</td></tr><tr><td>Expense allocations</td><td>No — exclude</td></tr></tbody></table>
+<h2>Lab Steps</h2>
+<ol>
+  <li><strong>Navigate to the Application Framework</strong> — log in to your IFP workspace and open the Application Framework configurator</li>
+  <li><strong>Answer Top-Level questions</strong> — use the requirements table above. Pay close attention to naming conventions.</li>
+  <li><strong>Open the Hierarchy Configuration screen</strong> — set Entity to 2 levels, Department to 3 levels, rename both to match your question responses exactly</li>
+  <li><strong>Answer FP model questions</strong> — margin in FP, Product (2 levels), Customer (2 levels), expense planning with Entity + Department dimensionality</li>
+  <li><strong>Answer HC model questions</strong> — multi-currency: Yes, IS list name: default, Department: Yes, Job term: Job (default)</li>
+  <li><strong>Generate the application</strong> — click Generate and monitor the generation logs</li>
+  <li><strong>Review generation logs</strong> — identify any errors or warnings. Note which items failed to generate.</li>
+  <li><strong>Delete the CE model</strong> — since we chose GL-level CapEx, the generated CE model is not needed</li>
+</ol>
+
+<div class="screenshot-placeholder"><em>📸 Screenshot: Application Framework wizard — Top-Level question screen</em></div>
+<div class="screenshot-placeholder"><em>📸 Screenshot: Hierarchy Configuration screen — Entity 2 levels, Department 3 levels</em></div>
+<div class="screenshot-placeholder"><em>📸 Screenshot: Generation success screen — showing all 4 models generated</em></div>
+
+<h2>Debrief Questions</h2>
+<ol>
+  <li>What happens if the Entity name in the configuration question doesn't match the name in the Hierarchy Configuration screen?</li>
+  <li>Why did we choose Option A for Headcount but Option B for CapEx?</li>
+  <li>If FictoCorp later decides they need to add a Geography dimension, what would be the impact?</li>
+  <li>What is the minimum number of hierarchy levels allowed? Maximum?</li>
+  <li>Why does the Application Framework generate a CE model even when we selected GL-level CapEx?</li>
+</ol>
+
+<div class="callout callout-tip"><strong>💡 Generation Issues?</strong><p>If generation fails, check: (1) do you have all 4 required roles, (2) are you in your default tenant, (3) check the configuration logs in PAF to see where failures occurred.</p></div>
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./config-walkthrough.html">← Previous</a><a class="prevnext-btn" href="./post-generation.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

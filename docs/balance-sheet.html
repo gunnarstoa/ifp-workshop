@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balance Sheet & Cash Flow — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link active" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Balance Sheet &amp; Cash Flow Planning</h1>
+<p>Balance Sheet and Cash Flow planning in IFP v2.0 models activity-based changes to BS accounts, integrating inputs from Revenue/COGS, OpEx, Headcount, and CapEx into a complete three-statement financial view.</p>
+
+<h2>Key Concept: Activity-Based Planning</h2>
+<div class="callout callout-note"><strong>📝 Activity, Not Balances</strong><p>All BS inputs represent periodic ACTIVITY — not end-of-period balances. If you enter nothing, the last actual period's balance rolls forward. Formula: Closing Balance = Last Actual Balance ± Activity Entered. This means a zero-input BS still produces a sensible result.</p></div>
+<h2>Admin Setup</h2>
+
+<h3>FIN – BS – Manage Planning Methods</h3>
+<p>Set a planning method for each BS account:</p>
+<table><thead><tr><th>Method</th><th>Best For</th></tr></thead><tbody><tr><td>Direct Input</td><td>Most general BS accounts</td></tr><tr><td>Days Sales Outstanding (DSO)</td><td>Accounts receivable</td></tr><tr><td>Days Payable Outstanding (DPO)</td><td>Accounts payable / trade payables</td></tr><tr><td>Days Inventory Outstanding (DIO)</td><td>Inventory accounts</td></tr><tr><td>Inventory Turns</td><td>Inventory (alternative to DIO)</td></tr><tr><td>Percent of A/R</td><td>Bad debt provision and related accounts</td></tr><tr><td>Planned in CapEx</td><td>PP&amp;E and accumulated depreciation — auto from CE model</td></tr></tbody></table>
+<h3>FIN – BS – Manage Cash Offset Accounts</h3>
+<div class="callout callout-warning"><strong>⚠️ New Concept in v2.0</strong><p>Cash Offset Accounts define how each BS account affects the cash balance. Increases in assets reduce cash; increases in liabilities increase cash. Every BS account must be categorized. Missing mappings break the cash flow statement.</p></div>
+<ul>
+  <li>Select the Primary Cash Account at the top</li>
+  <li>For each BS account, assign its offset category</li>
+  <li>Cannot have more than one mapping per account (system shows red error to prevent double-counting)</li>
+</ul>
+
+<h3>FIN – BS – Cash Flow Mappings</h3>
+<ul>
+  <li>Map each leaf-level BS account to a cash flow line</li>
+  <li>Drives the indirect cash flow statement calculation</li>
+  <li>Only leaf-level accounts should be mapped</li>
+</ul>
+
+<h2>End-User Planning Pages</h2>
+
+<h3>BS – Account Planning</h3>
+<div class="screenshot-placeholder"><em>📸 Screenshot: BS Account Planning page — showing DSO input for Accounts Receivable</em></div>
+<ul>
+  <li>Entity level only — no department or other operational dimensions</li>
+  <li>Dynamic inputs based on planning method (DSO → enter days; DIO → enter days; Direct → enter amounts)</li>
+  <li>Adjustment field available for every method</li>
+</ul>
+
+<h3>Sub-Schedules</h3>
+<table><thead><tr><th>Page</th><th>Purpose</th></tr></thead><tbody><tr><td>BS – Investments</td><td>Enter new investment details — see IS/BS/CF impact on timeline</td></tr><tr><td>BS – Intangibles &amp; Financing</td><td>Add intangibles, short-term debt, long-term debt instruments</td></tr><tr><td>BS – Leases</td><td>Enter capital and operating lease details</td></tr><tr><td>BS – Joint Ventures</td><td>Enter JV details and see financial statement impact</td></tr><tr><td>BS – Equities</td><td>Opening share balance, historical and planned share issuance</td></tr></tbody></table><div class="callout callout-tip"><strong>💡 Entity Alignment Required</strong><p>For sub-schedules (investments, leases, etc.): the entity selected in the instrument must match the entity selector on the page. Misalignment = no financial data shown below the input. This is expected behavior.</p></div>
+
+<h3>BS – Balancing Routine</h3>
+<ul>
+  <li>Runs month-by-month sequentially (July must complete before August due to retained earnings roll-forward)</li>
+  <li>Runs for ALL entities, not just the selected one</li>
+  <li>After running: balance sheet should balance based on the inputs provided</li>
+  <li>Balancing amounts posted to accounts specified in admin</li>
+</ul>
+
+<h3>CF – Indirect Adjustments</h3>
+<ul>
+  <li>Shows system-calculated indirect cash flows based on BS mappings</li>
+  <li>Manual fine-tuning adjustments available per line item</li>
+</ul>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./capex.html">← Previous</a><a class="prevnext-btn" href="./top-down.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

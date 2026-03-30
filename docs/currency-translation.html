@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Translation — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link active" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Currency Translation</h1>
+<p>IFP v2.0 uses <strong>currency triangulation</strong> — a redesigned approach that requires only a single set of exchange rates yet can translate to any number of reporting currencies instantly, without code changes.</p>
+
+<h2>How Triangulation Works</h2>
+<div class="screenshot-placeholder"><em>📸 Screenshot: Currency triangulation diagram — local currencies → base currency → reporting currencies</em></div>
+<p>The method uses a <strong>base currency</strong> (e.g., USD) as an intermediary:</p>
+<ol>
+  <li>Load exchange rates from all local currencies → base currency (one set of rates)</li>
+  <li>System automatically calculates reciprocal rates: base currency → any local currency (1 ÷ loaded rate)</li>
+  <li>Combine: local → base rate × reciprocal base → reporting rate = local → reporting rate</li>
+  <li>All reporting currencies are available simultaneously from the single rate set</li>
+</ol>
+
+<h2>Adding a New Reporting Currency</h2>
+<div class="callout callout-tip"><strong>💡 It's This Simple</strong><p>To add a new reporting currency: (1) add the currency to the Report Currency list, (2) give it its currency code. Done. All financial data is immediately available in that currency — no module changes, no additional rate loads.</p></div>
+<h2>Architecture Components</h2>
+<table><thead><tr><th>Component</th><th>Purpose</th></tr></thead><tbody><tr><td>Currency Flat</td><td>List of all local currencies used in the model</td></tr><tr><td>Report Currency dimension</td><td>Currencies available for reporting — add/remove freely</td></tr><tr><td>Exchange Rate data</td><td>Loaded rates: local currency → base currency</td></tr><tr><td>Rate Types</td><td>Month-end, monthly average, historical — determines which rate applies to each GL account</td></tr><tr><td>Statistical Rate Type</td><td>Always = 1; used for non-financial metrics (headcount, units); never needs loading</td></tr><tr><td>Entity → Local Currency attribute</td><td>Each leaf entity has its local currency as an attribute</td></tr><tr><td>GL Account → Rate Type attribute</td><td>Each IS and BS account has a rate type attribute</td></tr></tbody></table>
+<h2>Rate Types</h2>
+<table><thead><tr><th>Rate Type</th><th>Typical Use</th></tr></thead><tbody><tr><td>Month-end rate</td><td>Balance sheet accounts (snapshot at period end)</td></tr><tr><td>Monthly average rate</td><td>Most P&amp;L accounts (average over the period)</td></tr><tr><td>Historical rate</td><td>Equity section accounts (locked at original transaction rate)</td></tr><tr><td>Statistical rate</td><td>Non-financial metrics — always translates at 1 (no loading needed)</td></tr></tbody></table>
+<h2>Calculation Flow</h2>
+<ol>
+  <li><strong>Exchange Rate Module</strong> — stores loaded rates + calculates reciprocal rates automatically</li>
+  <li><strong>Rates by Rate Type for Reporting Currencies</strong> — calculates rates from each local currency → each reporting currency, per rate type</li>
+  <li><strong>Rates by Entity</strong> — pre-calculates entity-level rates to avoid double lookups in output modules (Polaris optimization)</li>
+  <li><strong>Output Modules</strong> — look up entity rate for GL account's rate type × financial data = translated amount</li>
+</ol>
+<div class="callout callout-note"><strong>📝 Performance Design</strong><p>Pre-calculating rates by entity is a deliberate Polaris performance optimization. It avoids a double lookup (entity → currency → rate) in every output module calculation.</p></div>
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./admin-runbook.html">← Previous</a><a class="prevnext-btn" href="./extensions.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

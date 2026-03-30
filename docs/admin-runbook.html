@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Runbook — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link active" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Admin Runbook</h1>
+<p>This runbook documents all ongoing administration tasks for IFP v2.0 — what to do every month, every planning cycle, and how to troubleshoot common issues.</p>
+
+<h2>Monthly Checklist</h2>
+<ol>
+  <li><strong>Update Current Period</strong> — Model Settings → Time → update current period in all 4 models</li>
+  <li><strong>Run ADO pipelines</strong> — refresh hierarchies, flat lists, attributes, actuals, and FX rates</li>
+  <li><strong>Review mappings</strong> — check Admin model for any unmapped new departments, entities, or accounts from source systems</li>
+</ol>
+
+<h2>Planning Cycle Checklist</h2>
+<ol>
+  <li>Update time ranges if the planning horizon has changed</li>
+  <li>Update the versions list with any new planning versions</li>
+  <li>Run version-to-version copy actions to seed new versions from existing data</li>
+  <li>Review all administration pages — planning methods, account settings, BS/CF mappings</li>
+  <li>Confirm all HC and CapEx cross-model imports are up to date before opening planning</li>
+</ol>
+
+<h2>Version Management</h2>
+<p>Location: Administration → FIN/HC/CapEx – Manage Versions</p>
+<ul>
+  <li>Map each native Anaplan version to the custom comparison version list</li>
+  <li>Enable custom comparison versions via <code>Override = TRUE</code> in SYS by Version Variance Comparison</li>
+  <li>Run data copy actions to seed new scenario versions</li>
+  <li>Version names must be <strong>identical across Admin, FP, HC, and CE</strong></li>
+</ul>
+<div class="callout callout-warning"><strong>⚠️ Version Mismatch = Incorrect Variances</strong><p>If variance reports show unexpected results, check version mappings in all Manage Versions pages. A missing or incorrect mapping is the most common cause.</p></div>
+<h2>Planning Methods Management</h2>
+<p>Location: Administration → FIN – IS – Manage Planning Methods</p>
+<ul>
+  <li>Review at start of each planning cycle</li>
+  <li>Update when new accounts are added or business rules change</li>
+  <li>Accounts with missing methods produce no forecast values downstream</li>
+  <li>When adding a new custom method: add to Planning Methods list → configure in SYS module → update input module line items → update LISS → update admin mapping module</li>
+</ul>
+
+<h2>Account Settings (IS and BS)</h2>
+<ul>
+  <li>Review whenever new accounts are added to the Chart of Accounts</li>
+  <li>IS accounts: set reporting sign (debit/credit) and account type</li>
+  <li>BS accounts: set planning method, cash offset category, and cash flow mapping</li>
+  <li>Incorrect signs affect report display — values may show as negative when they should be positive</li>
+</ul>
+
+<h2>Troubleshooting Quick Reference</h2>
+<table><thead><tr><th>Symptom</th><th>Most Likely Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Blank dashboards</td><td>Mappings missing or selective access</td><td>Check Admin mapping pages; check user roles</td></tr><tr><td>HC costs not in FP</td><td>GL account mapping or import not run</td><td>Check HC – Update Mappings; run FIN – Import from HC Model</td></tr><tr><td>CapEx not in FP</td><td>GL account mapping, entity-dept mapping, or import not run</td><td>Check CapEx – General Admin; run FIN – Import from CapEx Model</td></tr><tr><td>ADO load errors</td><td>Source file format change or transformation view mismatch</td><td>Validate source file format; check ADO link mappings</td></tr><tr><td>Incorrect variances</td><td>Version mapping error</td><td>Check Manage Versions pages in all models</td></tr><tr><td>Planning grid empty</td><td>Dimensional selector at parent level</td><td>Change selector to leaf-level member</td></tr><tr><td>BS not balancing</td><td>Balancing Routine not run, or new accounts unmapped</td><td>Run Balancing Routine; check cash offset and CF mappings</td></tr></tbody></table><div class="callout callout-tip"><strong>💡 Root Cause 80% of Issues</strong><p>Most IFP issues stem from missing or incorrect mappings in the Administration pages. When something doesn't work, start there.</p></div>
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./reporting.html">← Previous</a><a class="prevnext-btn" href="./currency-translation.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

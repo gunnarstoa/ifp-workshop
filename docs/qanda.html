@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A from Sessions — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link active" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+      
+<h1>Q&amp;A from Sessions</h1>
+<p>Frequently asked questions from IFP v2.0 technical enablement sessions.</p>
+
+<h2>Application Framework &amp; Configuration</h2>
+<dl>
+  <dt>Can I re-run the Application Framework to change configuration choices after generation?</dt>
+  <dd>Yes — you can re-configure and re-generate. However, post-generation customizations (extensions, manual fixes) may need to be reapplied. Plan your configuration carefully upfront to minimize re-generation.</dd>
+
+  <dt>What happens if generation fails partway through?</dt>
+  <dd>Check the PAF configuration logs to see exactly where it failed. Common causes: missing roles (need all 4), wrong default tenant (Integration Admin must generate in their default tenant), or source model not included in generation. Fix the issue and re-generate.</dd>
+
+  <dt>Can a customer use their existing data hub instead of ADO?</dt>
+  <dd>Yes — but they'll need to configure import actions during implementation instead of using ADO links. ADO is the recommended and supported path for new implementations.</dd>
+
+  <dt>What's the maximum number of hierarchy levels?</dt>
+  <dd>Maximum 8 levels per model, minimum 2 levels. The hierarchy screen shows combined levels across selected models.</dd>
+</dl>
+
+<h2>Headcount</h2>
+<dl>
+  <dt>Can IFP plan at the employee level?</dt>
+  <dd>Not directly — IFP HC plans at job/role level to protect PII. For position or employee-level detail, use OWP (Operational Workforce Planning) which integrates natively with IFP HC, or WFB (Workforce Budgeting).</dd>
+
+  <dt>Why can't I delete a job?</dt>
+  <dd>You can only delete jobs with no headcount assigned. Check the "Not In Use" indicator — if any FTE is assigned via HRIS Actuals, the Delete checkbox is read-only. Reassign or remove headcount first.</dd>
+
+  <dt>How do pay band deviations work?</dt>
+  <dd>The system calculates a Cost Multiplier for each job (fully loaded cost ÷ salary). If this falls outside the min/max benchmark multiplier range from the pay band, a deviation is flagged in the Insights Panel. Deviations don't block planning — they flag for management review.</dd>
+</dl>
+
+<h2>CapEx</h2>
+<dl>
+  <dt>Can I plan CapEx by department?</dt>
+  <dd>Not directly in v2.0 — CapEx is Entity-level only. The entity-to-department mapping in CapEx General Admin handles distribution of depreciation to P&amp;L dimensions. For full dept-level CapEx, an extension is required.</dd>
+
+  <dt>What is CWIP (Construction Work in Progress)?</dt>
+  <dd>Assets flagged as CWIP don't start depreciating until the in-service date is reached. The asset sits in the CWIP balance sheet account until it's placed in service.</dd>
+</dl>
+
+<h2>Balance Sheet &amp; Cash Flow</h2>
+<dl>
+  <dt>Why do BS inputs represent activity, not balances?</dt>
+  <dd>IFP's BS uses a roll-forward approach: Closing Balance = Last Actual Balance ± Activity. This means entering nothing still produces a valid result (last actual rolls forward). You only need to enter changes, not restated balances each period.</dd>
+
+  <dt>The balance sheet isn't balancing — what do I check?</dt>
+  <dd>1) Run the Balancing Routine, 2) Check all BS accounts have cash offset categories, 3) Check all cash flow mappings are complete, 4) Ensure FIN – Import from CapEx Model has been run recently.</dd>
+</dl>
+
+<h2>ADO &amp; Data</h2>
+<dl>
+  <dt>Why do some ADO links fail to generate out of the box?</dt>
+  <dd>Known issue with the Application Framework — Vendor Hierarchy (FP), SYS by J2/J3 Job (HC), SYS by J4 Job (HC — no link created), and Job Grade (HC) are documented broken links. Create them manually using the ADO setup steps in the Config Guide.</dd>
+
+  <dt>In what order should I load data?</dt>
+  <dd>Always: hierarchies and master data first, then actuals. Push Admin model planning lists to all spoke models before loading any actuals. Source files must be in the correct format — validate against the ADO templates.</dd>
+</dl>
+
+<h2>Currency</h2>
+<dl>
+  <dt>How do I add a new reporting currency?</dt>
+  <dd>Add the currency to the Report Currency list in the application. Give it its ISO code. That's it — all financial data is immediately available in the new currency via triangulation. No module changes or additional rate loading required.</dd>
+
+  <dt>What is the Statistical Rate Type used for?</dt>
+  <dd>Non-financial metrics like headcount and FTE counts. These metrics always translate at a rate of 1 (no conversion). You don't need to load statistical rates — the system automatically assumes a rate of 1.</dd>
+</dl>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./whats-coming.html">← Previous</a><a class="prevnext-btn" href="./resources.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

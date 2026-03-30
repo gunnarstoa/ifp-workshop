@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab B: Full 3-Statement Configuration — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link active" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Lab B: Full 3-Statement Configuration</h1>
+<div class="lab-banner">
+  <span class="lab-type">🔬 Hands-On Lab</span>
+  <span class="lab-duration">⏱ Estimated time: 45–60 minutes</span>
+</div>
+
+<h2>Objectives</h2>
+<p>Building on Lab A, you will extend FictoCorp's IFP deployment to full 3-statement financial planning — adding CapEx, Balance Sheet, Cash Flow, and a Geography dimension.</p>
+
+<h2>What Changes from Lab A</h2>
+<table><thead><tr><th>Setting</th><th>Lab A</th><th>Lab B</th></tr></thead><tbody><tr><td>CapEx</td><td>Option B — GL level</td><td>Option A — IFP CapEx Model</td></tr><tr><td>Balance Sheet</td><td>No</td><td>Yes</td></tr><tr><td>Cash Flow</td><td>No</td><td>Yes</td></tr><tr><td>Geography</td><td>No</td><td>Yes — 'Geography' (2 levels: All Regions → Americas / EMEA)</td></tr><tr><td>Models Generated</td><td>Admin + FP + HC (CE deleted)</td><td>Admin + FP + HC + CE (all 4 kept)</td></tr></tbody></table>
+<h2>Customer Requirements Brief — FictoCorp Phase 2</h2>
+<div class="callout callout-note"><strong>📝 Starting Point</strong><p>Begin with a fresh workspace or re-run the Application Framework configuration from scratch. Do not extend Lab A's workspace.</p></div>
+<table><thead><tr><th>Requirement</th><th>Decision</th></tr></thead><tbody><tr><td>All Lab A settings</td><td>Same as Lab A (Entity, Dept, Product, Customer, HC Option A, multi-currency)</td></tr><tr><td>Geography</td><td>Yes — 'Geography' (2 levels: All Regions → Americas / EMEA)</td></tr><tr><td>CapEx</td><td>Option A: IFP CapEx Model</td></tr><tr><td>Balance Sheet</td><td>Yes</td></tr><tr><td>Cash Flow</td><td>Yes — indirect cash flow</td></tr><tr><td>BS list name</td><td>Planning Account BS Hierarchy (default)</td></tr><tr><td>CF list name</td><td>Planning Account CF Hierarchy (default)</td></tr></tbody></table>
+<h2>Lab Steps</h2>
+<ol>
+  <li><strong>Configure Top-Level questions</strong> — same as Lab A, but add Geography (2 levels) and select Option A for CapEx</li>
+  <li><strong>Hierarchy Configuration</strong> — add Geography hierarchy (2 levels), name it 'Geography'</li>
+  <li><strong>FP questions</strong> — same as Lab A, but answer Yes to Balance Sheet and Cash Flow. Set BS and CF list names to defaults.</li>
+  <li><strong>CE questions</strong> — multi-currency: Yes, IS list name: default, BS list name: default</li>
+  <li><strong>Generate and review logs</strong></li>
+  <li><strong>Post-Generation</strong> — complete all required tasks including CapEx general admin (entity-to-dept mapping, asset types, depreciation accounts)</li>
+  <li><strong>Run FIN – Import from CapEx Model</strong> — after configuring CapEx admin</li>
+  <li><strong>Configure BS</strong> — set planning methods, cash offset accounts, cash flow mappings</li>
+  <li><strong>Run the Balancing Routine</strong> — ensure the balance sheet balances</li>
+</ol>
+
+<h2>Key Additional Post-Gen Tasks for Full 3-Statement</h2>
+<ul>
+  <li><strong>CapEx – General Admin:</strong> Set entity-to-department mapping, map asset types to depreciation accounts, select CWIP account and FX rate type</li>
+  <li><strong>FIN – BS – Manage Planning Methods:</strong> Assign a method to every BS account</li>
+  <li><strong>FIN – BS – Manage Cash Offset Accounts:</strong> Categorize every BS account's cash impact</li>
+  <li><strong>FIN – BS – Cash Flow Mappings:</strong> Map every leaf-level BS account to a CF line</li>
+  <li><strong>Run Balancing Routine</strong> after first data entry to confirm BS balances</li>
+</ul>
+
+<div class="callout callout-warning"><strong>⚠️ CapEx Dimension Constraint</strong><p>CapEx is planned at Entity level ONLY — no Department, Geography, or other dimensions. The entity-to-department mapping in CapEx – General Admin handles distribution of depreciation costs to the correct P&amp;L dimensions.</p></div>
+
+<h2>Debrief Questions</h2>
+<ol>
+  <li>What is the purpose of the Cash Offset Accounts mapping? What happens if an account is missing?</li>
+  <li>Why does the Balancing Routine run month-by-month sequentially instead of all at once?</li>
+  <li>If a customer wants to track CapEx by department, what options do they have?</li>
+  <li>When would you choose Geography at 3 levels vs. 2 levels?</li>
+  <li>What is the difference between Direct Load and Transformation Load in ADO?</li>
+</ol>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./data-load-ado.html">← Previous</a><a class="prevnext-btn" href="./revenue-cogs.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-Generation Checklist — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link active" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Post-Generation Checklist</h1>
+<p>Generation is not the finish line — it's the starting line. A significant set of post-generation tasks are required before the IFP application is usable. Work through this checklist in order.</p>
+
+<div class="callout callout-warning"><strong>⚠️ ⚠️ Known Broken ADO Links — Fix First</strong><p>The following ADO links are documented as broken or missing out of the box. Create these manually before attempting any data loads: <br><strong>Financial Planning:</strong> Vendor Hierarchy<br><strong>Headcount:</strong> SYS by J2 Job, SYS by J3 Job, SYS by J4 Job (no link — create from scratch), Job Grade</p></div>
+
+<h2>Required Tasks</h2>
+
+<h3>1. Review Generation Logs</h3>
+<ul>
+  <li>Check PAF configuration logs for any failed modules or line items</li>
+  <li>Create any missing model elements manually using the template model as reference</li>
+  <li>Verify no blank action mappings exist</li>
+</ul>
+
+<h3>2. Time Settings (all models — must be consistent)</h3>
+<ul>
+  <li>Model Settings → Time: set fiscal year start month, current period, number of past/future years</li>
+  <li><strong>Set current period to July</strong> for demo environments — gives a 6+6 forecast that displays well</li>
+  <li>All 4 models must have the same current year and current period</li>
+</ul>
+<div class="screenshot-placeholder"><em>📸 Screenshot: Model Settings → Time — showing current period set to July 2026</em></div>
+
+<h3>3. Version Alignment (all models)</h3>
+<ul>
+  <li>Create all required versions (Current Forecast Base, AOP Base, Prior Forecast, etc.)</li>
+  <li>Set switchover dates</li>
+  <li>Version names must be <strong>identical across all models</strong></li>
+  <li>Map versions in FIN – Manage Versions, HC – Manage Versions, CapEx – Manage Versions</li>
+</ul>
+
+<h3>4. Spoke Model Mapping</h3>
+<ul>
+  <li>Map the HC model to your workspace copy</li>
+  <li>Map the CE model to your workspace copy</li>
+  <li>Without this, data cannot flow from HC/CE into FP</li>
+</ul>
+
+<h3>5. Placeholder Row Detail List Members</h3>
+<p>Add placeholder members to the following lists in FP and CE models:</p>
+<ul>
+  <li>FP: Row Details – OpEx</li>
+  <li>FP: Row Details – Allocation</li>
+  <li>CE: Row Details – Asset</li>
+  <li>CE: Row Details – Disposals</li>
+</ul>
+
+<h3>6. Validate Hierarchy Levels and Mirror Lists</h3>
+<p>If hierarchy levels were added during configuration:</p>
+<ul>
+  <li>Verify new lists generated and each has a SYS module</li>
+  <li>Update SYS by Mirror Entity and SYS by Mirror Department with new line items</li>
+</ul>
+
+<h3>7. Fix Dependent Dropdowns</h3>
+<ul>
+  <li>Dependent dropdowns don't always generate correctly</li>
+  <li>Test each and fix manually if needed</li>
+</ul>
+
+<h3>8. UX Fixes</h3>
+<table><thead><tr><th>Fix</th><th>Pages Affected</th></tr></thead><tbody><tr><td>Set page context to top level (not leaf)</td><td>Admin source-to-planning pages, HC map jobs, BS manage cash offsets, OpEx allocation rule definition</td></tr><tr><td>Check grid filters generated correctly</td><td>All planning input pages</td></tr><tr><td>Verify correct line items shown/hidden</td><td>All planning grids</td></tr><tr><td>Fix KPI card scaling (thousands/millions)</td><td>IS report, BS report</td></tr><tr><td>Fix form action fields</td><td>BS intangibles, BS investments, BS joint ventures, BS leases, HC job metadata</td></tr><tr><td>Reorder app categories (alphabetical → custom)</td><td>All app categories</td></tr><tr><td>Fix navigation links on landing page</td><td>Home/landing page</td></tr><tr><td>Fix page selector order</td><td>All pages with selectors</td></tr></tbody></table>
+<h3>9. Delete DEMO Actions</h3>
+<ul>
+  <li>Any action prefixed with "DEMO" is for manual data validation only</li>
+  <li>Delete after generation (or after validating data loads)</li>
+</ul>
+
+<h3>10. Build ADO Pipelines</h3>
+<p>See <a href="./data-load-ado.html">Data Load via ADO</a> for complete instructions.</p>
+
+<h2>Optional Tasks</h2>
+<ul>
+  <li>Remove lists for excluded dimensions (verify not used elsewhere first)</li>
+  <li>Create additional version copy actions if needed</li>
+  <li>Set user roles and selective access</li>
+  <li>Update time filters to show quarters (if needed)</li>
+</ul>
+
+<h2>Common Issues Quick Reference</h2>
+<table><thead><tr><th>Symptom</th><th>Check</th></tr></thead><tbody><tr><td>Blank dashboards</td><td>Administration dashboard mappings or selective access</td></tr><tr><td>HC costs not in FP</td><td>HC GL account mapping + run FIN – Import from HC Model</td></tr><tr><td>CapEx not in FP</td><td>GL account + entity-to-dept mapping in CapEx admin + run FIN – Import from CapEx Model</td></tr><tr><td>ADO load errors</td><td>Source file format, transformation view, link mappings</td></tr><tr><td>Incorrect variances</td><td>Version mapping in manage versions pages</td></tr><tr><td>Missing data in planning grids</td><td>Dimensional selectors set to parent — must be leaf level</td></tr></tbody></table>
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./lab-a.html">← Previous</a><a class="prevnext-btn" href="./data-load-ado.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

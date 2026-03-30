@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Down Planning — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link active" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Top-Down Planning</h1>
+<p>Top-Down Planning allows finance leaders to set executive-level targets and compare them against bottom-up plans from the other IFP modules. In v2.0, this is a manual input process — targets are entered at Level 2 of each dimension hierarchy.</p>
+
+<div class="callout callout-important"><strong>🚨 ⚠️ V2.0 Limitation: No Dynamic Disaggregation</strong><p>Dynamic top-down disaggregation (automatic cascade of high-level targets to lower levels) is NOT available in IFP v2.0. All targets must be entered manually at each desired level of detail. Anaplan plans to reintroduce dynamic disaggregation in a future release.</p></div>
+<h2>What You Can Set Targets For</h2>
+<table><thead><tr><th>Category</th><th>Target Types</th></tr></thead><tbody><tr><td>Revenue</td><td>Revenue Target + Gross Profit Target</td></tr><tr><td>Margin</td><td>Gross Profit % target for COGS accounts</td></tr><tr><td>Operating Expenses</td><td>General OpEx (excl. labor), Labor Cost, Total OpEx</td></tr><tr><td>Headcount</td><td>FTE and Headcount targets</td></tr></tbody></table>
+<h2>Planning Level</h2>
+<p>Top-Down targets are entered at <strong>Level 2 of each dimension hierarchy</strong>:</p>
+<ul>
+  <li>Products → Product Family level (L2)</li>
+  <li>Customers → All Customers grouping (L2)</li>
+  <li>Departments → Function level, one above cost center (L2)</li>
+  <li>Geography → Region level if used (L2)</li>
+  <li>All values in <strong>USD base currency</strong> — can be reported in local currency</li>
+</ul>
+
+<h2>Process Pages</h2>
+
+<h3>TD – Planning</h3>
+<div class="screenshot-placeholder"><em>📸 Screenshot: Top-Down Planning page — showing revenue and gross profit target inputs by product family</em></div>
+<ul>
+  <li>Manual input at each level and slice</li>
+  <li>Revenue department in demo: Sales &amp; Marketing only (only dept with revenue)</li>
+  <li>OpEx targets in the "no vendor" slice (can also enter by specific vendor)</li>
+  <li>Pivot available to enter values across periods more easily</li>
+</ul>
+
+<h3>TD – Summary</h3>
+<ul>
+  <li>Compares top-down targets vs. bottom-up plans at L2 for each dimension</li>
+  <li>Side-by-side: Top-Down Revenue vs. Current Year Revenue Forecast (bottom-up)</li>
+  <li>Variance calculations shown</li>
+</ul>
+
+<h2>Why Targets Don't Show on Module Summary Pages</h2>
+<p>By design — OpEx Summary, Revenue Summary, etc. don't show top-down targets. Reason: users may be viewing at a more granular level (L3 entity, cost center) than the L2 targets, causing confusion. All target vs. actual comparison is consolidated on the TD pages at consistent L2.</p>
+
+<h2>Talk Track for Customer Demos</h2>
+<ul>
+  <li>"This shows you the top-down target vs. what the teams are planning bottom-up — alignment is visible at a glance"</li>
+  <li>"We support setting targets for revenue, margin, OpEx, and now headcount in v2.0"</li>
+  <li>"Dynamic disaggregation is on the roadmap — in this release, targets are entered manually at L2"</li>
+</ul>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./balance-sheet.html">← Previous</a><a class="prevnext-btn" href="./reporting.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

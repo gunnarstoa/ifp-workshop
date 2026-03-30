@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inter-Module Data Flows — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link active" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Inter-Module Data Flows</h1>
+<p>Understanding how IFP's modules connect is essential for troubleshooting, configuration, and explaining the solution to customers.</p>
+
+<h2>High-Level Flow</h2>
+<div class="screenshot-placeholder"><em>📸 Screenshot: IFP inter-module flow diagram — Administration feeding all modules, HC/CapEx feeding FP, all modules feeding Reporting</em></div>
+<h2>Module-to-Module Connections</h2>
+<table><thead><tr><th>From</th><th>To</th><th>What Flows</th><th>How</th></tr></thead><tbody><tr><td>Administration (ADO)</td><td>All Spoke Models</td><td>Planning hierarchies (Entity, Dept, IS/BS accounts)</td><td>ADO push</td></tr><tr><td>Headcount (HC)</td><td>Financial Planning (FP)</td><td>Workforce costs by GL account</td><td>FIN – Import from HC Model action</td></tr><tr><td>CapEx (CE)</td><td>Financial Planning (FP)</td><td>Depreciation expense, PP&amp;E, cash payments</td><td>FIN – Import from CapEx Model action</td></tr><tr><td>Revenue/COGS (FP)</td><td>Balance Sheet (FP)</td><td>AR (via DSO), COGS drives inventory, net income → retained earnings</td><td>Internal FP model formulas</td></tr><tr><td>OpEx (FP)</td><td>Balance Sheet (FP)</td><td>AP (via DPO), accrued expenses → current liabilities</td><td>Internal FP model formulas</td></tr><tr><td>All FP modules</td><td>Top-Down Summary (FP)</td><td>Bottom-up totals for target comparison</td><td>Internal FP model formulas</td></tr><tr><td>All FP modules</td><td>Reporting &amp; Analysis (FP)</td><td>Consolidated IS, BS, CF data</td><td>Internal FP model formulas</td></tr></tbody></table>
+<h2>Reporting Module: Available Reports</h2>
+<table><thead><tr><th>Report</th><th>Source Data</th></tr></thead><tbody><tr><td>Income Statement</td><td>Revenue/COGS + OpEx + HC (via import) + CapEx depreciation (via import)</td></tr><tr><td>Balance Sheet</td><td>BS account planning + CapEx PP&amp;E + Revenue-driven AR + OpEx-driven AP</td></tr><tr><td>Cash Flow (Indirect)</td><td>BS account changes mapped to CF lines + manual CF adjustments</td></tr><tr><td>Variance Analysis (IS/BS)</td><td>Any two versions compared</td></tr><tr><td>Currency Variance Analysis</td><td>FX rate changes between periods</td></tr><tr><td>Product Outlier Analysis</td><td>Revenue/COGS data by product</td></tr><tr><td>Management Reporting Pack</td><td>Consolidated IS + BS + CF + commentary</td></tr></tbody></table>
+<h2>Administration as the Data Hub</h2>
+<p>The Administration model is the single source of truth for planning structures:</p>
+<ol>
+  <li>Source systems → Admin model (via ADO)</li>
+  <li>Admin model → mapping workbench (source to planning)</li>
+  <li>Admin model → all spoke models (via ADO push)</li>
+</ol>
+<p>Every planning model (FP, HC, CE) depends on Admin model for its list structures. Always complete Admin mappings before loading actuals or starting a new planning cycle.</p>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./extensions.html">← Previous</a><a class="prevnext-btn" href="./whats-coming.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

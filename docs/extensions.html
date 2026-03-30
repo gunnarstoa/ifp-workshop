@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Extensions — IFP v2.0 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.0 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+<div class="sidebar-header">
+<div class="sidebar-title">IFP v2.0 Workshop</div>
+</div>
+<ul class="nav-list">
+<li class="nav-section-title">Getting Started</li>
+<li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+<li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+<li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+<li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+<li class="nav-section-title">Module 1 — Platform Foundations</li>
+<li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+<li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+<li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+<li class="nav-section-title">Module 2 — Configuration Workshop</li>
+<li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+<li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+<li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+<li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+<li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+<li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+<li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+<li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+<li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+<li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+<li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+<li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+<li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+<li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+<li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+<li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+<li><a class="nav-link active" href="./extensions.html">Common Extensions</a></li>
+<li class="nav-section-title">Reference</li>
+<li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+<li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+<li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+<li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+<li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+<li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+</ul>
+</nav>
+
+  <main class="main-content">
+    <div class="content-body">
+      
+  <div class="tsd-banner">
+    <div class="tsd-item tsd-tell">
+      <span class="tsd-icon">📖</span>
+      <div><strong>Tell</strong><br>Understand the concept</div>
+    </div>
+    <div class="tsd-item tsd-show">
+      <span class="tsd-icon">👁</span>
+      <div><strong>Show</strong><br>See it demonstrated</div>
+    </div>
+    <div class="tsd-item tsd-do">
+      <span class="tsd-icon">✅</span>
+      <div><strong>Do</strong><br>Apply it yourself</div>
+    </div>
+  </div>
+      
+<h1>Common Extensions</h1>
+<p>IFP v2.0 is a configurable foundation — most customers extend it to meet their specific requirements. This page documents the most common extensions and how to approach them.</p>
+
+<h2>When to Configure vs. When to Extend</h2>
+<table><thead><tr><th>Scenario</th><th>Approach</th></tr></thead><tbody><tr><td>Need a new planning method</td><td>Extend — add to Planning Methods list, configure in SYS module, add line items to input module, update LISS</td></tr><tr><td>Need allocations (basic)</td><td>Configure — allocation functionality is built in</td></tr><tr><td>Need sophisticated allocations (waterfalls, multi-step, reciprocal)</td><td>Extend to Profitability application — it integrates with IFP</td></tr><tr><td>Need more than 8 dimensions</td><td>Bespoke model build required — cannot configure within IFP</td></tr><tr><td>Need CapEx by department</td><td>Extend — entity-to-department mapping in General Admin handles simple cases; custom module needed for full dimensionality</td></tr><tr><td>Need employee-level HC detail</td><td>Extend to OWP or WFB — both integrate natively with IFP HC model</td></tr><tr><td>Need external revenue planning</td><td>Configure — use 'In another model → load to FP' option + DAT Margin Planning Import module</td></tr></tbody></table>
+<h2>Creating a Custom Planning Method</h2>
+<p>Example: Headcount × Rate method (drives expense from HC data rather than generic units)</p>
+<ol>
+  <li><strong>Add to Planning Methods list</strong> — create new entry with unique code</li>
+  <li><strong>Configure in SYS by Planning Methods module</strong> — set business area applicability (expense, margin, BS), add description (shown as context help to users)</li>
+  <li><strong>Add calculation line items to input module</strong> (e.g., INP Expense Planning):
+    <ul>
+      <li>Boolean: "Is Method in Use?" — controls when calculation runs</li>
+      <li>Headcount Amount — formula: actuals → from DAT module; forecast → from HC integration module</li>
+      <li>Rate per Head — formula scope = Actuals version (historical rate auto-calculated; forecast manually entered)</li>
+      <li>Adjustment — always manual, no formula</li>
+      <li>Final Amount — formula: if method not in use → 0; if actuals month → actual GL amount; else → HC × Rate + Adjustment</li>
+    </ul>
+  </li>
+  <li><strong>Apply DCA (Dynamic Cell Access)</strong> — hide line items from users when method isn't applicable</li>
+  <li><strong>Update Line Item Subset (LISS)</strong> — map line items to display and forecast method</li>
+  <li><strong>Assign to accounts</strong> — in FIN – IS – Manage Planning Methods, change the account's method assignment</li>
+  <li><strong>Add to Final Amount</strong> — ensure new method's output is included in the Final Amount formula</li>
+</ol>
+<div class="callout callout-tip"><strong>💡 Final Amount Is The Only Output</strong><p>The Final Amount line item is the only value pulled into downstream modules. All other line items in the planning method module are for calculation purposes only — they don't need summarization turned on.</p></div>
+<h2>Integrating External Planning Sources</h2>
+<table><thead><tr><th>Integration</th><th>DAT Module to Load</th><th>Pattern</th></tr></thead><tbody><tr><td>Operational Workforce Planning (OWP)</td><td>DAT Headcount Planning Import</td><td>OWP → ADO → DAT module → FP calculations</td></tr><tr><td>Consensus Margin Planning (CMP)</td><td>DAT Margin Planning Import</td><td>CMP → ADO → DAT module → FP calculations</td></tr><tr><td>External CapEx system</td><td>DAT Capex IS + BS Planning Import</td><td>External → ADO → 2 DAT modules → FP calculations</td></tr><tr><td>Project Planning (PCP)</td><td>DAT Project Planning Import</td><td>PCP → ADO → DAT module → FP calculations</td></tr></tbody></table>
+<h2>Top-Down to Bottom-Up Integration</h2>
+<p>IFP can push Top-Down targets to downstream planning models:</p>
+<ul>
+  <li>Source: INP TD Expense Targets + INP TD Gross Profit Targets in FP model</li>
+  <li>Targets: OWP, CMP, or other downstream Anaplan models</li>
+  <li>Dimensionality: L2 of each hierarchy dimension + Version + Year (not monthly)</li>
+  <li>Pattern: FP → ADO → Target Model (or direct model-to-model if ADO unavailable)</li>
+</ul>
+
+      <div class="prevnext-nav"><a class="prevnext-btn" href="./currency-translation.html">← Previous</a><a class="prevnext-btn" href="./inter-module-flows.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>
