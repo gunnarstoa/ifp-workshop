@@ -86,7 +86,7 @@
 <h2>The Four Generated Models</h2>
 <table><thead><tr><th>Model</th><th>Purpose</th><th>Always Generated?</th></tr></thead><tbody><tr><td>Admin</td><td>Central configuration layer — source-to-planning mappings, metadata</td><td>Yes</td></tr><tr><td>Financial Planning (FP)</td><td>Revenue/COGS, OpEx, Balance Sheet, Cash Flow, Top-Down</td><td>Yes</td></tr><tr><td>Headcount (HC)</td><td>Job-level workforce planning and cost calculations</td><td>Yes (delete if not using HC model option)</td></tr><tr><td>Capital Expense (CE)</td><td>Asset planning, depreciation, disposal modeling</td><td>Yes (delete if not using CE model option)</td></tr></tbody></table><div class="callout callout-note"><strong>📝 Model Generation Behavior</strong><p>The Application Framework cannot completely exclude a model from generation. If you choose 'GL-level planning' for HC or CapEx instead of the dedicated model, both models are still generated — you must delete the unused model manually after generation.</p></div>
 <h2>Configuration Question Flow</h2>
-<div class="screenshot-placeholder"><em>📸 Screenshot: Application Framework — interview-style configuration wizard showing question categories</em></div>
+<figure class="screenshot-figure"><img src="../img/introduction-and-navigation-2.jpg" alt="Application Framework — interview-style configuration wizard showing question categories" class="screenshot-img" loading="lazy"><figcaption>Application Framework — interview-style configuration wizard showing question categories</figcaption></figure>
 <p>The wizard is divided into two layers:</p>
 <ol>
   <li><strong>Top-Level Questions</strong> — define foundational structure across all 4 models (dimensions, modules to include, multi-currency, headcount/CapEx approach)</li>

@@ -78,7 +78,7 @@
 <h2>What ADO Replaces</h2>
 <table><thead><tr><th>v1.x Approach</th><th>v2.0 ADO Approach</th></tr></thead><tbody><tr><td>Large data hub model consuming workspace memory</td><td>Lightweight mapping model — no memory overhead</td></tr><tr><td>Manual import actions into data hub</td><td>ADO links push data directly to spoke models</td></tr><tr><td>Source mappings configured in data hub model</td><td>Mappings maintained in Admin model, consumed by ADO at load time</td></tr><tr><td>Separate admin model for master data</td><td>Admin model is the mapping workbench — ADO is the pipeline</td></tr></tbody></table>
 <h2>ADO Architecture in IFP</h2>
-<div class="screenshot-placeholder"><em>📸 Screenshot: ADO architecture diagram — source files → Admin model → ADO pipelines → FP/HC/CE spoke models</em></div>
+<figure class="screenshot-figure"><img src="../img/back-end-information-2.jpg" alt="ADO architecture diagram — source files → Admin model → ADO pipelines → FP/HC/CE spoke models" class="screenshot-img" loading="lazy"><figcaption>ADO architecture diagram — source files → Admin model → ADO pipelines → FP/HC/CE spoke models</figcaption></figure>
 <h3>Two Types of ADO Loads</h3>
 <ol>
   <li><strong>Direct loads</strong> — load source data as-is (hierarchies and flat lists that don't need planning mappings). Set up once and reuse.</li>
