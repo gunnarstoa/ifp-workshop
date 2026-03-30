@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Mark active nav link based on current page filename
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.getAttribute('href').includes(currentPage)) {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === currentPage) {
       link.classList.add('active');
     }
   });
