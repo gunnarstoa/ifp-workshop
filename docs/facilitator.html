@@ -5,6 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facilitator Guide — IFP v2.0 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .script-block {
+      background: #f0f7ff;
+      border-left: 4px solid #0066cc;
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .script-block p { margin-bottom: 0.5rem; }
+    .script-block p:last-child { margin-bottom: 0; }
+    .slide-ref {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #1a2332;
+      color: #7eb8f7;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .click-instruction {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.83rem;
+      color: #92400e;
+      border-radius: 0 4px 4px 0;
+      margin: 0.5rem 0;
+    }
+    .click-instruction strong { color: #78350f; }
+    .facilitator-note {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.83rem;
+      color: #166534;
+      border-radius: 0 4px 4px 0;
+      margin: 0.5rem 0;
+    }
+    .section-divider {
+      border: none;
+      border-top: 2px solid #e2e8f0;
+      margin: 2.5rem 0;
+    }
+    .timing-badge {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 20px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .checklist { list-style: none; padding: 0; margin: 0.75rem 0; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.35rem 0;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: "☐";
+      font-size: 1.1rem;
+      color: #6b7280;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    .day-banner {
+      background: linear-gradient(135deg, #1a2332 0%, #0f3460 100%);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .day-banner h2 { color: #fff; margin: 0 0 0.25rem; font-size: 1.3rem; }
+    .day-banner p { color: #93c5fd; margin: 0; font-size: 0.88rem; }
+    .sub-section {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+    }
+    .legend-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .swatch-blue { background: #0066cc; }
+    .swatch-yellow { background: #f59e0b; }
+    .swatch-green { background: #22c55e; }
+    .swatch-dark { background: #1a2332; }
+    @media print {
+      .sidebar, .mobile-header { display: none !important; }
+      .main-content { margin-left: 0 !important; }
+      .script-block { break-inside: avoid; }
+      .day-banner { break-before: page; }
+    }
+  </style>
 </head>
 <body>
   <div class="mobile-header">
@@ -13,125 +136,427 @@
   </div>
 
   <nav class="sidebar">
-  <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
-  </div>
-  <ul class="nav-list">
-        <li class="nav-section-title">Getting Started</li>
-        <li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
-        <li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
-        <li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
-        <li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
-        <li class="nav-section-title">Module 1 — Platform Foundations</li>
-        <li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
-        <li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
-        <li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
-        <li class="nav-section-title">Module 2 — Configuration Workshop</li>
-        <li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
-        <li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
-        <li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
-        <li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
-        <li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
-        <li class="nav-section-title">Module 3 — Module Walkthroughs</li>
-        <li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
-        <li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
-        <li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
-        <li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
-        <li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
-        <li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
-        <li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
-        <li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
-        <li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
-        <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
-        <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
-        <li class="nav-section-title">Reference</li>
-        <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
-        <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
-        <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
-        <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
-        <li><a class="nav-link active" href="./facilitator.html">Facilitator Guide</a></li>
-      </ul>
-    </nav>
+    <div class="sidebar-header">
+      <div class="sidebar-title">IFP v2.0 Workshop</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-section-title">Getting Started</li>
+      <li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+      <li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+      <li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+      <li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+      <li class="nav-section-title">Module 1 — Platform Foundations</li>
+      <li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+      <li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+      <li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+      <li class="nav-section-title">Module 2 — Configuration Workshop</li>
+      <li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+      <li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+      <li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+      <li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+      <li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+      <li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+      <li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+      <li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+      <li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+      <li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+      <li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+      <li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+      <li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+      <li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+      <li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+      <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+      <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+      <li class="nav-section-title">Reference</li>
+      <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+      <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+      <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+      <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+      <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+      <li><a class="nav-link active" href="./facilitator.html">Facilitator Guide</a></li>
+    </ul>
+  </nav>
 
   <main class="main-content">
     <div class="content-header">
       <h1>Facilitator Guide</h1>
-      <p class="subtitle">Workshop timing, setup checklist, debrief answer keys, and tips</p>
-      <div class="badge-row"><span class="content-badge">Reference</span></div>
+      <p class="subtitle">Your delivery script for the IFP v2.0 Technical Enablement Workshop</p>
+      <div class="badge-row">
+        <span class="content-badge">Facilitator Only</span>
+        <span class="content-badge">Full Day</span>
+      </div>
     </div>
     <div class="content-body">
 
+      <div class="callout-note">
+        <span class="callout-label">ℹ How to Use This Guide</span>
+        <p>Blue blocks = what to say. Yellow blocks = what to click or show. Green blocks = facilitator notes (don't read aloud). Keep it conversational — these are the key beats to hit, not a word-for-word script.</p>
+      </div>
 
-      <h2>Workshop Timing (Full Day)</h2>
-      <table><thead><tr><th>Time</th><th>Module</th><th>Format</th><th>Duration</th></tr></thead><tbody><tr><td>09:00–09:30</td><td>Getting Started — Overview, FictoCorp, IFP Suite, Anaplan Way</td><td>Presentation + Discussion</td><td>30 min</td></tr><tr><td>09:30–10:15</td><td>Module 1 — App Framework, ADO, Model Architecture</td><td>Presentation + Demo</td><td>45 min</td></tr><tr><td>10:15–10:30</td><td>Break</td><td>—</td><td>15 min</td></tr><tr><td>10:30–11:30</td><td>Config Walkthrough + Lab A Setup + Start Lab A</td><td>Presentation + Lab</td><td>60 min</td></tr><tr><td>11:30–12:30</td><td>Complete Lab A + Debrief</td><td>Lab + Discussion</td><td>60 min</td></tr><tr><td>12:30–13:30</td><td>Lunch</td><td>—</td><td>60 min</td></tr><tr><td>13:30–14:00</td><td>Post-Gen Checklist + Data Load via ADO</td><td>Presentation</td><td>30 min</td></tr><tr><td>14:00–15:00</td><td>Lab B — Full 3-Statement Configuration</td><td>Lab</td><td>60 min</td></tr><tr><td>15:00–16:00</td><td>Module Walkthroughs (Revenue, OpEx, HC, CapEx, BS, Top-Down, Reporting)</td><td>Demo</td><td>60 min</td></tr><tr><td>16:00–16:30</td><td>Admin Runbook, Currency Translation, Extensions, Q&amp;A</td><td>Presentation + Q&amp;A</td><td>30 min</td></tr></tbody></table>
-      <h2>Pre-Workshop Setup Checklist</h2>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch swatch-blue"></div> Script — say this</div>
+        <div class="legend-item"><div class="legend-swatch swatch-yellow"></div> Click / Show — do this</div>
+        <div class="legend-item"><div class="legend-swatch swatch-green"></div> Facilitator note — don't read aloud</div>
+        <div class="legend-item"><div class="legend-swatch swatch-dark"></div> Reference</div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- PRE-WORKSHOP CHECKLIST -->
+      <h2>Pre-Workshop Checklist</h2>
+      <p>Run through this before participants arrive.</p>
       <ul class="checklist">
-        <li>Polaris workspace provisioned (minimum 100GB)</li>
-        <li>All participants have all 4 required roles in the tenant</li>
-        <li>Finance Apps CoE added to workspace (financeapplications@anaplan.com)</li>
-        <li>IFP v2.0 template model accessible in workspace</li>
-        <li>ADO dataspace configured for the workshop workspace</li>
-        <li>Sample data files (BOM ADO templates) uploaded to ADO Source Data</li>
-        <li>Demo environment calendar set to July (6+6 forecast — displays well on screen)</li>
-        <li>HC and CE spoke models mapped to workshop workspace copy</li>
-        <li>Test generation completed successfully (verify all 4 models generate)</li>
+        <li>Verify everyone has access to the IFP v2.0 workspace and all 4 required roles (Application Owner, Workspace Admin, Page Builder, Integration Admin)</li>
+        <li>Confirm the Application Framework is accessible in each participant's workspace</li>
+        <li>ADO dataspace configured — source files uploaded (BOM ADO templates)</li>
+        <li>Demo environment calendar set to July — current period = July 2026 (6+6 layout)</li>
+        <li>HC and CE spoke models mapped to the demo workspace copy</li>
+        <li>FictoCorp case study page open in a browser tab</li>
+        <li>IFP application open in another tab — land on the home page</li>
+        <li>Lab guide open at <a href="./overview.html">Workshop Overview</a> for participants</li>
+        <li>Test the Application Framework once — confirm generation completes for a simple config</li>
+        <li>Know the GitHub credentials for the IFP app — contact financeapplications@anaplan.com if needed</li>
       </ul>
 
+      <!-- OPENING MODULE -->
+      <div class="day-banner">
+        <h2>Getting Started</h2>
+        <p>IFP positioning, FictoCorp case study, and the Anaplan Way for Applications.</p>
+      </div>
+
+      <h3>Opening <span class="timing-badge">09:00 — 15 min</span></h3>
+
+      <div class="script-block">
+        <p>Good morning everyone — glad you're here. Quick intro: today we're going deep on Anaplan's Integrated Financial Planning application — IFP v2.0. This is the newest version of the finance suite, built on the Application Framework, and it's a significant departure from v1.x in some important ways.</p>
+        <p>The goal isn't just feature awareness. By the end of today you should be able to walk into a customer engagement, configure the Application Framework from scratch, set up ADO pipelines, and navigate all seven planning modules confidently. Two hands-on labs, full module walkthroughs, and a lot of real implementation context.</p>
+        <p>Ask questions whenever — don't wait for a Q&amp;A moment.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Take attendance. Fix access issues now — anyone without the right roles cannot generate. Do not move on until everyone is confirmed.</div>
+
+      <h3>IFP Suite Overview <span class="timing-badge">09:15 — 20 min</span></h3>
+
+      <div class="click-instruction"><strong>Open the IFP v2.0 application. Navigate to the home landing page.</strong></div>
+
+      <div class="script-block">
+        <p>IFP is Anaplan's application suite for the Office of the CFO. Where RPM applications serve the Sales function — territories, quotas, capacity — IFP serves Finance. Connected P&amp;L, balance sheet, and cash flow planning from a single platform.</p>
+        <p>The pain it addresses: Finance teams spending weeks closing the books in Excel, no connected view of how headcount changes affect OpEx, CapEx tracked in a separate system, multi-currency consolidation that takes days. IFP connects all of it.</p>
+        <p>Six planning modules, plus Reporting and Analysis. They feed each other — Revenue drives AR on the balance sheet, Headcount costs flow into OpEx, CapEx depreciation flows into P&amp;L. One change cascades through the entire financial model automatically.</p>
+      </div>
+
+      <div class="script-block">
+        <p>V2.0 is a significant architectural change from v1.x. Three big things: the Application Framework replaces the static configurator, ADO replaces the data hub model, and headcount planning moves from named-employee level to job level. If you've done IFP v1.x work before, the concepts carry over — but the mechanics are almost entirely different.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Good moment to ask: "Has anyone deployed IFP v1.x before?" Use their experience as an anchor point for the v2 differences discussion.</div>
+
+      <h3>Anaplan Way for Applications <span class="timing-badge">09:35 — 15 min</span></h3>
+
+      <div class="script-block">
+        <p>Quick run through how an IFP implementation actually runs. Six phases: Requirements, Configure, Generate, Data Load, Application Ready, Extend and Expand.</p>
+        <p>The key shift from traditional Anaplan builds: you configure first, using the Application Framework wizard. The wizard generates four models. Then you do post-generation setup. Then you load data via ADO. Then you extend. The sequencing matters — getting dimension decisions right before you generate saves you from painful re-generation later.</p>
+        <p>Two things customers get wrong most often: (1) changing their mind on hierarchy levels after generation — adding a tier to Entity after you've built 15 post-gen tasks means redoing everything. (2) Not completing Admin source-to-planning mappings before loading actuals — you'll get blank reports and spend half a day debugging a mapping that takes five minutes to fix.</p>
+      </div>
+
+      <div class="script-block">
+        <p>One more thing on provisioning before we get into the hands-on: you need four specific roles to generate. Application Owner, Workspace Admin, Page Builder, and Integration Admin. If any are missing, the generation fails. And Integration Admins can only generate in their default tenant — if you're a partner, you need an Anaplan account with the customer's tenant as the default. Get this sorted before project kickoff, not the day you're planning to generate.</p>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- MODULE 1 -->
+      <div class="day-banner">
+        <h2>Module 1 — Platform Foundations</h2>
+        <p>Application Framework, ADO, and the 4-model architecture.</p>
+      </div>
+
+      <h3>Application Framework <span class="timing-badge">09:50 — 20 min</span></h3>
+
+      <div class="click-instruction"><strong>Open the Application Framework in the IFP workspace.</strong></div>
+
+      <div class="script-block">
+        <p>The Application Framework is the deployment mechanism for IFP. Instead of building models from scratch, you answer a structured set of questions and the Framework generates four Anaplan models configured to your specifications. About 8,000 objects — modules, lists, dashboards, actions.</p>
+        <p>Think of it like a really smart form. The questions fall into two buckets: Top-Level questions that apply across all four models — entity structure, dimensions to include, headcount approach, CapEx approach — and then model-specific questions for FP, HC, and CE individually.</p>
+        <p>Between the two buckets, there's a Hierarchy Configuration screen. This is where you set how many levels each hierarchy has and what to name them. And here's the rule that catches everyone: the name you type into the question must exactly match the name you enter in the Hierarchy screen. If they differ, things don't rename correctly throughout the model. Exact match. Capital letters matter.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Show the Top-Level questions briefly without answering them — you'll answer them properly during the Config Walkthrough section. This is just orientation.</div>
+
+      <div class="script-block">
+        <p>One thing to set expectations on: the Framework always generates all four models, even if you choose not to use HC or CapEx as dedicated planning models. If you choose GL-level CapEx planning, a CE model still generates — you delete it after. This is a known limitation; can't exclude models from generation.</p>
+      </div>
+
+      <h3>Anaplan Data Orchestrator <span class="timing-badge">10:10 — 20 min</span></h3>
+
+      <div class="click-instruction"><strong>Open ADO from the Anaplan home page. Show the Source Data, Links, and Transformation Views tabs briefly.</strong></div>
+
+      <div class="script-block">
+        <p>ADO replaces the data hub model from v1.x. In v1.x, you had a large data hub model sitting in your workspace consuming memory and requiring complex import actions. In v2.0, that's gone. ADO handles everything — master data loads, actuals, FX rates — through lightweight links that push directly to spoke models.</p>
+        <p>The Admin model is still the mapping workbench — you map source departments to planning departments, source accounts to planning accounts there. But ADO is the pipeline that moves data. Two types of loads: direct loads for things that don't need transformation — flat lists, hierarchies — and transformation loads for actuals, where you need to join source data to planning mappings before it can land in FP or HC.</p>
+      </div>
+
+      <div class="script-block">
+        <p>Important heads-up before we get to the labs: five ADO links fail to generate correctly out of the box. Vendor Hierarchy in FP, three Job-related links in HC, and Job Grade in HC. Known PAF generation issue. You have to create these manually after generation. We'll cover exactly how in the post-generation section. Flag it now so it doesn't surprise you during the lab.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Write the five broken links somewhere visible — whiteboard or slide. Participants will reference it during Lab A. The links are: Vendor Hierarchy (FP) · SYS by J2 Job (HC) · SYS by J3 Job (HC) · SYS by J4 Job (HC — no link at all) · Job Grade (HC).</div>
+
+      <h3>Model Architecture <span class="timing-badge">10:30 — 15 min</span></h3>
+
+      <div class="script-block">
+        <p>Four models, three of which are spokes feeding into the Financial Planning hub. Admin is the metadata layer — master lists, source-to-planning mappings, nothing transactional. FP is the core — all planning happens here. HC and CE are separate spokes that calculate workforce costs and CapEx, then push their outputs into FP via import actions.</p>
+        <p>Key dependency: whenever you update HC or CapEx planning, you have to manually run the import action in FP Admin to pull in the new data. It does not sync automatically. This is the most common source of "why doesn't my OpEx reflect my new headcount?" confusion. Run the import, every time, whenever either spoke changes.</p>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- MODULE 2 -->
+      <div class="day-banner">
+        <h2>Module 2 — Configuration Workshop</h2>
+        <p>Application Framework walkthrough, Labs A and B, post-generation, and ADO data load.</p>
+      </div>
+
+      <h3>Config Question Walkthrough <span class="timing-badge">10:45 — 45 min</span></h3>
+
+      <div class="click-instruction"><strong>Open the Application Framework. Navigate to the Top-Level questions.</strong></div>
+
+      <div class="script-block">
+        <p>Let's walk through every question before participants touch it. This is the map — I want you to understand what each choice does before you make it.</p>
+      </div>
+
+      <p class="sub-section">Entity Dimension</p>
+
+      <div class="script-block">
+        <p>Mandatory. This is your primary organizational hierarchy — whatever the customer calls their business units. For FictoCorp it's Entity with two levels: Total FictoCorp at the top, then USA and EMEA. The name you enter here must match the hierarchy rename exactly.</p>
+      </div>
+
+      <p class="sub-section">Optional Dimensions</p>
+
+      <div class="script-block">
+        <p>Department, Geography, Functional Area, Vendor — all optional. The rule: include only what you actually need for planning. Every extra dimension adds memory, complexity, and UX surface area. For FictoCorp Lab A: Department yes, everything else no. Geography we'll add in Lab B.</p>
+        <p>And the warning I give every customer: removing a dimension after generation affects every area of the model that uses it. Don't add dimensions speculatively. Have the conversation during requirements and make a firm decision before you generate.</p>
+      </div>
+
+      <p class="sub-section">Headcount Approach</p>
+
+      <div class="script-block">
+        <p>Three options. Option A is the IFP Role-Based HC model — this is what you want for most customers. Deploys both FP and HC, job-level planning flows into FP. Option B is GL-level — you enter headcount costs directly in FP at the account level, no HC model. Quick and dirty. Option C is for when another system — OWP, an external HRIS — owns headcount and you're just loading summarized data into FP.</p>
+        <p>For FictoCorp: Option A. Always lead with A unless there's a specific reason not to.</p>
+      </div>
+
+      <p class="sub-section">CapEx Approach</p>
+
+      <div class="script-block">
+        <p>Same three options. Option A deploys the dedicated CE model with asset-level planning, depreciation automation, disposal modeling. Option B is GL-level — useful when a customer has simple CapEx needs and doesn't need to track individual assets. For Lab A we'll use Option B to keep scope simple; Lab B adds the full CE model.</p>
+      </div>
+
+      <p class="sub-section">Balance Sheet and Cash Flow</p>
+
+      <div class="script-block">
+        <p>Yes or no. Lab A: No — we're keeping scope focused on P&amp;L. Lab B: Yes to both. One caveat: if you include Balance Sheet, make sure you're ready for the post-gen mapping work. Cash offset accounts, cash flow mappings — there's meaningful setup required after generation. We'll cover it in the post-gen section.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Stop and ask: any questions before we walk the FP model questions? The top-level questions are the highest-stakes decisions. Give participants a moment to think through FictoCorp's requirements against these choices.</div>
+
+      <p class="sub-section">FP Model — Key Questions</p>
+
+      <div class="script-block">
+        <p>For the FP model: margin planning in FP, Product dimension (two levels for FictoCorp), Customer dimension (two levels), expense planning with Entity and Department dimensionality, no allocations for Lab A. The IS, BS, and CF list names — take the defaults. Don't rename them unless the customer has a strong preference. Renaming adds overhead and the defaults are clear enough.</p>
+      </div>
+
+      <h3>Lab A: Configure FictoCorp <span class="timing-badge">11:30 — 60 min</span></h3>
+
+      <div class="click-instruction"><strong>Direct participants to the Lab A page in their lab guide. Give them the FictoCorp requirements table on screen.</strong></div>
+
+      <div class="script-block">
+        <p>Your turn. Lab A is FictoCorp Phase 1 — Revenue, OpEx, and Headcount. Use the requirements table in the lab guide. Work through the Application Framework questions, set your hierarchy levels, and generate.</p>
+        <p>Remember: the name in the question and the name in the Hierarchy Configuration screen must match exactly. When you click Generate, the logs will tell you if something went wrong.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Walk around during generation. Common issues: (1) name mismatch between question and hierarchy rename — look for inconsistent module naming in the generated app; (2) generation fails entirely — check all 4 roles are present in the tenant; (3) CE model generated despite choosing GL-level — expected, delete it after. After generation, call the group together to review logs before moving to post-gen.</div>
+
+      <h3>Post-Generation Checklist <span class="timing-badge">12:30 — 30 min</span></h3>
+
+      <div class="script-block">
+        <p>Generation just ran. Now comes the part that actually makes the app usable. A few things you must do before any data loads or demos.</p>
+        <p>First — those five broken ADO links. Create them manually. Vendor Hierarchy in FP, the four HC links. The Configuration Guide has exact steps. Don't skip this — you'll get ADO load failures that look like data problems but are actually just missing link definitions.</p>
+        <p>Second — time settings. Set the current period to July in all four models. This gives you a 6+6 layout — six months of actuals, six months of forecast. Much cleaner on screen than 9+3. All models must have the same current period. Version names must be identical across all models too — a mismatch breaks variance reporting in ways that are annoying to debug.</p>
+        <p>Third — spoke model mapping. Map HC and CE to your workspace. Without this, data cannot flow from those models into FP. Blank OpEx after a HC import almost always means the spoke model isn't mapped.</p>
+      </div>
+
+      <div class="click-instruction"><strong>Demo time settings in Model Settings → Time. Set current period to July 2026 together as a group.</strong></div>
+
+      <div class="facilitator-note">📝 The full post-gen checklist is in the lab guide. You don't need to walk every item verbally — direct participants there. Focus live time on the items most commonly missed: broken ADO links, time settings, spoke model mapping, UX category reordering.</div>
+
+      <h3>Lunch <span class="timing-badge">13:00 — 60 min</span></h3>
+
+      <div class="facilitator-note">📝 Use this time to check in with any participants who hit generation issues and help them catch up. Ensure everyone has a generated app before the afternoon sessions.</div>
+
+      <h3>Data Load via ADO <span class="timing-badge">14:00 — 30 min</span></h3>
+
+      <div class="click-instruction"><strong>Open ADO. Show the source files already uploaded. Navigate to the Source to Planning Departments mapping page in the Admin model.</strong></div>
+
+      <div class="script-block">
+        <p>Before you can plan anything, data needs to be in the models. ADO handles this. The flow: source files land in ADO, get pushed to the Admin model, you map them to planning structures, then push the planning structures to all spoke models, then load actuals using transformation views that join your source data to those planning mappings.</p>
+        <p>The source-to-planning mapping is the most important step. Every source department, entity, and account needs to map to a planning counterpart. The Unmapped KPI shows how many haven't been mapped yet — goal is zero before you push anything to the spokes.</p>
+      </div>
+
+      <div class="script-block">
+        <p>One thing that gets people: load order matters. Hierarchies and master data first, then actuals. If you try to load Trial Balance IS before the planning account list is populated, the load fails with mapping errors. Always hierarchies first.</p>
+      </div>
+
+      <h3>Lab B: Full 3-Statement <span class="timing-badge">14:30 — 60 min</span></h3>
+
+      <div class="script-block">
+        <p>Lab B extends FictoCorp to full three-statement planning. You'll add CapEx, Balance Sheet, Cash Flow, and a Geography dimension. Fresh configuration from scratch — don't extend Lab A's workspace.</p>
+        <p>Two things to watch in Lab B that weren't in Lab A. First, CapEx General Admin setup after generation — entity-to-department mapping, asset type to depreciation account mappings, CWIP account selection. All mappings must be to leaf-level accounts; parent accounts cause silent failures. Second, Balance Sheet admin — manage planning methods, cash offset accounts, cash flow mappings. All three of those must be complete before the Balancing Routine will give you a balanced sheet.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Circulate during Lab B. The most common sticking point: cash offset accounts. Participants don't fully understand what the category assignment means. If stuck, explain: "categorizing an account tells the model whether changes in that account increase or decrease cash. Increases in assets reduce cash. Increases in liabilities increase cash. Missing a category = missing cash movement in the CF statement."</div>
+
+      <hr class="section-divider">
+
+      <!-- MODULE 3 -->
+      <div class="day-banner">
+        <h2>Module 3 — Module Walkthroughs</h2>
+        <p>All 7 planning modules — Revenue/COGS, OpEx, Headcount, CapEx, Balance Sheet, Top-Down, Reporting.</p>
+      </div>
+
+      <h3>Revenue &amp; COGS <span class="timing-badge">15:30 — 15 min</span></h3>
+
+      <div class="click-instruction"><strong>Open IFP demo app. Navigate to Revenue &amp; COGS Planning. Select Hardware product, Direct Sales department.</strong></div>
+
+      <div class="script-block">
+        <p>Planning methods are configured per account per product — different product types can use completely different forecasting logic. Physical products might use Units x Rate. Services might use hours times rate per hour. SaaS subscriptions might use subscriptions times rate per subscription. You configure these in Administration before planners ever see the page.</p>
+        <p>The key UX behavior: select a product and the grid shows only the inputs for that product's method. Change the product and the grid changes too. Progressive Disclosure — planners only see what's relevant to their current context.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Switch between two different products live to show the grid changing. Mention: "Any account without a planning method assigned won't appear on this page at all. If a planner calls you and says their account is missing, first check that it has a method assigned."</div>
+
+      <h3>Operating Expenses <span class="timing-badge">15:45 — 15 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to OpEx Planning. Show an account using Prior Run Rate, then one using Line Item Detail.</strong></div>
+
+      <div class="script-block">
+        <p>One important change from v1.x: one method per account, applies across all entities and departments. In v1.x you could have different methods per entity for the same account. That's gone. If a customer pushes back on this, that's an extension — it's not complex, but it's net-new line items in the planning module.</p>
+        <p>Two accounts you'll always want in your demo setup: one using Prior Run Rate — shows the growth rate and adjustment fields; and one using Line Item Detail — shows how costs tracked by vendor or functional area work. The detail is important because line items here appear in the Summary but not on the main planning page — that trips up planners constantly.</p>
+      </div>
+
+      <h3>Headcount <span class="timing-badge">16:00 — 20 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to HC – Planning. Select a department with active headcount.</strong></div>
+
+      <div class="script-block">
+        <p>The big change from v1.x: job level, not employee level. No names. No SSNs. No salary data tied to individuals. This was a deliberate design choice to remove PII from the planning model — which also means no more segregated secure data hubs for headcount data.</p>
+        <p>Before planners can enter data, four admin steps: create job metadata, map jobs to departments, set job grade pay bands, map GL accounts. If any of those are incomplete, planners either can't see the jobs or the data won't flow correctly to FP. Setup sequence matters here more than almost any other module.</p>
+      </div>
+
+      <div class="script-block">
+        <p>One demo moment worth preparing: the pay band deviation indicator. Enter a salary that's outside the grade band and show the red deviation flag in the Insights Panel. It doesn't block the planner — it flags for management review. Customers love this. "Finally, a way to see when managers are trying to hire above grade."</p>
+      </div>
+
+      <h3>CapEx <span class="timing-badge">16:20 — 10 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to CapEx – New Asset Purchases. Show an existing asset entry.</strong></div>
+
+      <div class="script-block">
+        <p>Entity-level only. No department, no geography. This is a hard constraint in v2.0 — if a customer needs to plan CapEx by department, that's an extension. The entity-to-department mapping in General Admin handles distributing depreciation costs to the right P&amp;L dimensions, but the planning input itself is entity-only.</p>
+        <p>Show the financial impact timeline on an existing asset — the P&amp;L and BS columns update in real time as you change the order date or in-service date. This is the demo hook: "Change the in-service date from March to July and watch how the depreciation expense shifts. The P&amp;L impact is immediate."</p>
+      </div>
+
+      <h3>Balance Sheet <span class="timing-badge">16:30 — 15 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to BS – Account Planning. Select the Accounts Receivable account.</strong></div>
+
+      <div class="script-block">
+        <p>The concept that takes the most time to click for new users: inputs here are activity, not balances. You're entering what changed this period — not what the balance is. The system takes the last actual closing balance and adds or subtracts your activity input. Enter nothing and the last actual rolls forward. Enter something and it rolls forward plus your change.</p>
+        <p>The cash offset accounts setup is new in v2.0. You're telling the system: when this BS account changes, does that increase or decrease cash? Increases in assets reduce cash. Increases in liabilities increase cash. Every account needs a category assigned, or the cash flow statement will be incomplete. Missing categories don't generate errors — they just silently omit cash movements.</p>
+      </div>
+
+      <h3>Top-Down Planning <span class="timing-badge">16:45 — 10 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to TD – Planning. Show the revenue target entry grid.</strong></div>
+
+      <div class="script-block">
+        <p>Quick but important caveat: dynamic top-down disaggregation is not available in v2.0. In v1.x, entering a high-level target would automatically cascade it down. Here, targets are entered manually at Level 2 of each hierarchy. That's a known limitation — it's on the roadmap for a future release.</p>
+        <p>What's useful now: the TD Summary page. Side by side — what Finance wants at L2 vs. what the teams are planning bottom-up. If there's a $10M gap at the Americas level, it's immediately visible. That conversation with the CFO and the regional VP is the value prop — not the mechanics of how targets were entered.</p>
+      </div>
+
+      <h3>Reporting &amp; Analysis <span class="timing-badge">16:55 — 15 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to the Reporting &amp; Analysis category. Open the Income Statement Report.</strong></div>
+
+      <div class="script-block">
+        <p>Start with the IS report. Enable suppression — watch the empty accounts disappear. Show the analysis type switcher: Amounts, Year-over-year, Percentage, Percent of Revenue. These are the modes a CFO actually wants. Show the Balance Sheet Validation — is the BS in balance, yes or no. Show the management reporting pack — executive summary, P&amp;L, BS, cash flow, dynamic commentary that updates when plan data changes.</p>
+        <p>Two things to point out as new in v2.0: Product Sales Outlier Analysis — statistical detection of unusual product sales patterns, no extension required — and Product Correlation Analysis — shows which products move together across entities. Both are base product. That's usually a surprise to people who think statistical analysis requires custom builds.</p>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- MODULE 4 -->
+      <div class="day-banner">
+        <h2>Module 4 — Administration &amp; Extensions</h2>
+        <p>Admin runbook, currency translation, and extension patterns.</p>
+      </div>
+
+      <h3>Admin Runbook <span class="timing-badge">17:10 — 15 min</span></h3>
+
+      <div class="script-block">
+        <p>What does a model administrator actually do every month? Three things: update the current period in Model Settings across all four models, run the ADO pipelines to refresh hierarchies and actuals, and review the Admin model for any unmapped new codes from the source systems.</p>
+        <p>Most IFP support calls — not all, but most — trace back to the Admin model. Blank report, wrong variance, missing data — start with mappings in Admin. Is every source account mapped? Is every source entity mapped? Is the current period correct? Those three questions resolve 80% of issues.</p>
+      </div>
+
+      <h3>Currency Translation <span class="timing-badge">17:25 — 10 min</span></h3>
+
+      <div class="click-instruction"><strong>Navigate to the Report Currency list in the IFP app. Add a new currency live.</strong></div>
+
+      <div class="script-block">
+        <p>Triangulation. One set of rates — local currencies to base, base to everything else via reciprocal. The practical implication: adding a new reporting currency is two steps. Add it to the Report Currency list, give it its code. Done. Every report immediately shows data in that currency. No additional rate loads, no module changes.</p>
+        <p>Show this live. Add Japanese Yen, navigate to the IS Report, select JPY. The data is there. That's the demo moment — customers who've spent weeks configuring currency conversion in a custom build are always stunned by this.</p>
+      </div>
+
+      <h3>Extensions <span class="timing-badge">17:35 — 15 min</span></h3>
+
+      <div class="script-block">
+        <p>Three rules for extensions that I always give partners. One: don't modify base app line items — create net-new ones. Two: document everything with a naming convention. Three: challenge every extension request — anchor on what the base app already does before you start building.</p>
+        <p>The most common extension request we see: a custom planning method that drives expense from headcount data instead of generic units. The steps are in the lab guide. The principle applies to any new method — add to the list, configure in the SYS module, add calculation line items to the input module, update the LISS, assign to accounts. Maybe two hours for an experienced model builder.</p>
+        <p>The hard limit: eight dimensions. Customers who need more than eight require a bespoke extension — that's not negotiable with the Application Framework. Surface this in discovery. It rarely comes up, but when it does it needs to be caught before you commit to a project timeline.</p>
+      </div>
+
+      <h3>Wrap-Up <span class="timing-badge">17:50 — 10 min</span></h3>
+
+      <div class="script-block">
+        <p>That's the IFP v2.0 workshop. Two labs, seven module walkthroughs, post-gen, ADO, admin, currency, extensions.</p>
+        <p>Here's what I want you to take away: the Application Framework is not just a faster way to build — it's a structured conversation framework. The configuration questions tell you exactly what you need to discover from a customer. The known issues list tells you what to plan for in your project schedule. The module walkthroughs tell you what to demo and what to qualify.</p>
+        <p>Contact financeapplications@anaplan.com for support. First three IFP projects, reach out — the Finance Apps CoE wants to be involved. After that, you've got this.</p>
+        <p>Questions? And — feedback is always welcome. What was useful, what was confusing, what needs more depth.</p>
+      </div>
+
+      <div class="facilitator-note">📝 Note any questions that came up repeatedly during the day — those are candidates for the Q&A page update. Collect feedback verbally or via a quick survey.</div>
+
+      <hr class="section-divider">
+
+      <!-- DEBRIEF ANSWER KEYS -->
       <h2>Lab Debrief Answer Keys</h2>
 
-      <h3>Lab A</h3>
+      <h3>Lab A — Configure FictoCorp</h3>
       <ol>
-        <li>Name mismatch → modules and line items not renamed correctly throughout the model; generation inconsistencies</li>
-        <li>HC Option A because job-level workforce planning is needed; CapEx Option B because Phase 1 doesn't need asset-level detail — GL-level approach is sufficient and simpler</li>
-        <li>Re-generation required; Geography would be added to Revenue/COGS, OpEx, and Top-Down modules; all post-gen work must be redone</li>
-        <li>Minimum 2 levels, maximum 8 levels per model</li>
-        <li>The Application Framework cannot exclude models from generation — always generates all 4; delete the unused model manually</li>
+        <li><strong>Name mismatch between question and hierarchy screen:</strong> Modules and line items across the model won't be renamed correctly. The hierarchy levels will have inconsistent naming — some using the question response name, others using the hierarchy screen name. Best case: cosmetic annoyance. Worst case: downstream formulas that reference specific module names break silently.</li>
+        <li><strong>Why Option A for HC, Option B for CapEx:</strong> FictoCorp has ~500 employees and needs job-level workforce cost visibility — Option A is the right choice. For Lab A CapEx scope, we intentionally kept scope simple: GL-level CapEx means no asset tracking, no individual depreciation schedules. Appropriate for a first pass at full 3-statement scope in Lab B.</li>
+        <li><strong>Adding Geography after generation:</strong> Would require re-generating the application. Geography is used in Revenue/COGS, OpEx, and Top-Down — all three modules would need to be regenerated. All post-generation customizations done so far would need to be reapplied. This is why dimension decisions must be made before generating, not after.</li>
+        <li><strong>Minimum/Maximum hierarchy levels:</strong> Minimum 2, maximum 8 per model. The hierarchy screen shows the combined count across all selected models — Entity at 3 levels in FP + HC + CE = 9 total shown.</li>
+        <li><strong>Why CE generates even with GL-level CapEx:</strong> The Application Framework cannot exclude a model from generation — it always generates all four. The CE model generates, then you delete it manually after. This is a documented limitation. Don't count on it being resolved soon.</li>
       </ol>
 
-      <h3>Lab B</h3>
+      <h3>Lab B — Full 3-Statement</h3>
       <ol>
-        <li>Cash Offset Accounts define how each BS account affects cash. Missing category = missing cash movement in CF statement = incorrect cash balance</li>
-        <li>Retained earnings must roll forward sequentially — July's retained earnings affect August's opening balance; cannot process August until July is complete</li>
-        <li>Options: (1) entity-to-department mapping in CapEx General Admin for simple allocation; (2) custom extension with department-level CapEx input module</li>
-        <li>3 levels if you need Country/Region/Sub-region granularity; 2 levels for simple Americas/EMEA split; fewer levels = better performance</li>
-        <li>Direct Load: load source file as-is (hierarchies, flat lists). Transformation Load: join source data with Admin model planning mappings before loading (actuals data)</li>
+        <li><strong>Cash Offset Accounts — purpose and consequence of missing:</strong> Every BS account change that affects cash must be categorized: does a change in this account increase or decrease cash? Missing category = that account's movement is not captured in the cash flow statement. The BS may balance, but the CF statement will be understated. Doesn't generate an error — just silently omits cash movements. Review every BS account in the offset mapping before running the Balancing Routine.</li>
+        <li><strong>Balancing Routine — why sequential, not all at once:</strong> Retained earnings roll forward from each period into the next. July's retained earnings are an input to August's opening balance. The system can't calculate August until July is complete. Month-by-month is the only way to maintain the roll-forward integrity. This also means the Balancing Routine must run every period after new BS activity is entered — not just once at setup.</li>
+        <li><strong>CapEx by department — customer options:</strong> (1) Use the entity-to-department mapping in CapEx General Admin for simple proportional allocation — this distributes depreciation to P&amp;L dimensions but the planning input remains entity-level. (2) Build a custom extension: add a Department dimension to the CapEx input modules. Estimated effort: one to two days of model builder time. (3) Use Option C (external model) if the customer's ERP system tracks CapEx by department and they just need summary data in IFP.</li>
+        <li><strong>Geography 2 levels vs 3 levels:</strong> 2 levels (All Regions → Americas/EMEA) is appropriate for FictoCorp's simple entity structure — two entities map to two regions cleanly. 3 levels would add a sub-region tier (e.g., Americas → US East / US West / LatAm) — useful if revenue planning needs that granularity but adds dimensionality across Revenue/COGS and OpEx. General rule: fewer levels is better for performance and UX unless the business genuinely plans at that detail.</li>
+        <li><strong>Direct Load vs Transformation Load:</strong> Direct Load = source file loads as-is, no transformation needed. Used for hierarchies, flat lists, reference data that maps directly to the model structure. Transformation Load = source data must be joined to planning mapping data before it can land in the spoke model. Used for actuals (Trial Balance IS/BS, HRIS data) where source account codes need to be translated to planning account codes via the Admin model mappings.</li>
       </ol>
 
-      <h2>Common Participant Questions &amp; Answers</h2>
-
-      <div class="callout-note">
-        <p><strong>"Can we change configuration after generation?"</strong></p>
-        <p><strong>A:</strong> Yes, but re-generation overwrites post-gen customizations. Scope carefully upfront. Catch dimensionality errors before starting post-gen work.</p>
-      </div>
-
-      <div class="callout-note">
-        <p><strong>"Why does ADO have broken links out of the box?"</strong></p>
-        <p><strong>A:</strong> Known PAF generation issues. Always check the broken links list (Vendor Hierarchy, SYS by J2/J3/J4 Job, Job Grade) and create manually before data loading. Plan for this in your project schedule.</p>
-      </div>
-
-      <div class="callout-note">
-        <p><strong>"When does dynamic top-down disaggregation come back?"</strong></p>
-        <p><strong>A:</strong> On the roadmap, no committed date in v2.0.0. Manual input at each level in the meantime. Set customer expectations accordingly.</p>
-      </div>
-
-      <div class="callout-note">
-        <p><strong>"Can we have more than 8 dimensions?"</strong></p>
-        <p><strong>A:</strong> Hard limit — 8 dimensions maximum. Customers requiring more need a bespoke model build as extension. Identify dimension requirements early in discovery.</p>
-      </div>
-
-      <h2>Tips for a Smooth Workshop</h2>
-      <ul>
-        <li>Have participants work in pairs for labs — one drives, one navigates the guide</li>
-        <li>Pre-generate Lab A before the session so you can help debug quickly</li>
-        <li>Set realistic expectations about PAF generation time (~5–10 minutes)</li>
-        <li>Flag the known broken ADO links proactively — participants will hit them immediately</li>
-        <li>Demo environment: always set current period to July — 6+6 layout looks much better than 9+3</li>
-        <li>The "one method per account" change from v1.x is often confusing — explain it explicitly during the Config Walkthrough</li>
-        <li>During BS demo: always mention the activity-based planning concept upfront — it's the most counterintuitive aspect for first-time users</li>
-      </ul>
-      
-<div class="prevnext-nav"><a class="prevnext-btn" href="./glossary.html">← Previous</a><span></span></div>
     </div>
   </main>
   <script src="../js/nav.js"></script>
