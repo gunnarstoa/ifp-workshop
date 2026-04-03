@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Sales Demo Playbook — IFP v2.1 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.1 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+  <div class="sidebar-header">
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
+  </div>
+  <ul class="nav-list">
+        <li class="nav-section-title">Getting Started</li>
+        <li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+        <li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+        <li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+        <li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+        <li class="nav-section-title">Module 1 — Platform Foundations</li>
+        <li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+        <li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+        <li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+        <li class="nav-section-title">Module 2 — Configuration Workshop</li>
+        <li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+        <li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+        <li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+        <li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+        <li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+        <li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+        <li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+        <li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+        <li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+        <li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+        <li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+        <li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+        <li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+        <li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+        <li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+        <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+        <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+        <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link active" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
+        <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
+        <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+        <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+        <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+        <li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+      </ul>
+    </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Pre-Sales Demo Playbook</h1>
+      <p class="subtitle">Three buyer-type demo scenarios — what to show, what order, what to avoid</p>
+      <div class="badge-row"><span class="content-badge">Reference</span><span class="content-badge">Pre-Sales</span></div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-important"><span class="callout-label">🚨 Before Any Demo</span><p>Run through the <a href="./limitations.html">Known Limitations</a> page before every demo. Confirm the customer is not a hard-stop case (BYOK/AWS, &gt;8 dimensions, public sector). Do not proceed to a product demo with a disqualified prospect.</p></div>
+
+      <div class="callout-warning"><span class="callout-label">⚠ Data Must Be Loaded</span><p>Never demo IFP with an empty or freshly generated application. Load the demo data set first — an empty planning grid is a deal-killer. Allow 30–60 minutes for demo environment prep before any customer call.</p></div>
+
+      <h2>Scenario 1 — CFO / Executive</h2>
+      <p><strong>Audience:</strong> CFO, VP Finance, Chief Accounting Officer, executive sponsor</p>
+      <p><strong>What they care about:</strong> Time-to-deploy, risk, ROI, and whether the plan integrates across the business.</p>
+
+      <h3>Show in This Order</h3>
+      <ol>
+        <li><strong>IFP landing page</strong> — show the 6-module grid; establish that this is a complete suite, not a point solution. Name each module in one sentence.</li>
+        <li><strong>Top-Down Planning</strong> — open TD – Planning and show executive targets vs. bottom-up in the TD – Summary view. Lead with: "You set the target here. Your teams plan bottom-up. This page shows the gap — live."</li>
+        <li><strong>Executive Dashboard</strong> — show the Reporting pack summary page. Highlight that it auto-generates from the planning data — no export, no manual copy-paste.</li>
+        <li><strong>Time-to-deploy story</strong> — verbally cover: Application Framework generates the full suite in hours; partner configures in 8–10 weeks; upgrades are centrally deployed — no rebuild.</li>
+      </ol>
+
+      <h3>What NOT to Show (Before Data Is Loaded)</h3>
+      <ul>
+        <li>Do not open any planning grid before confirming demo data is loaded — empty grids look broken</li>
+        <li>Do not show the Application Framework wizard — executives do not want to see configuration screens</li>
+        <li>Do not show ADO pipeline details — this is IT content, not CFO content</li>
+        <li>Do not show Finance Analyst / CoPlanner — not GA yet</li>
+      </ul>
+
+      <h3>Three Key Proof Points</h3>
+      <ol>
+        <li><strong>8–10 week deployment</strong> via Application Framework — not a 6-month custom build</li>
+        <li><strong>Single connected suite</strong> — Revenue, OpEx, HC, CapEx, BS, and CF in one platform; no reconciliation spreadsheets</li>
+        <li><strong>Centrally-managed upgrades</strong> — future releases deploy without manual rebuilds; customer stays current automatically</li>
+      </ol>
+
+      <h3>Common Objections + Factual Responses</h3>
+      <table>
+        <thead><tr><th>Objection</th><th>Factual Response</th></tr></thead>
+        <tbody>
+          <tr><td>"We already have Excel / EPM tool X."</td><td>IFP replaces spreadsheet-based consolidation by connecting all plan inputs in one model. Version comparison and variance analysis are built in — no manual reconciliation between tools.</td></tr>
+          <tr><td>"8–10 weeks sounds fast. What's the catch?"</td><td>The Application Framework generates the model structure — the time savings come from not building custom models from scratch. Configuration and data load are still real work; 8–10 weeks assumes a clean, in-scope implementation.</td></tr>
+          <tr><td>"We're public sector / we use a private cloud."</td><td>IFP v2.0+ requires ADO, which runs on AWS. Public sector and sovereign cloud customers cannot use IFP currently. Let's discuss what options exist — [stop and engage Apps team].</td></tr>
+          <tr><td>"What about headcount planning?"</td><td>IFP includes job-level headcount planning with pay bands and cost sync to the financial plan. For employee-level detail, it integrates with Operational Workforce Planning. Most FP&amp;A teams find job-level sufficient for budget planning.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Scenario 2 — FP&amp;A Manager</h2>
+      <p><strong>Audience:</strong> FP&amp;A Manager, Senior Financial Analyst, Planning Manager, Budget Owner</p>
+      <p><strong>What they care about:</strong> Planning workflow, data freshness, version comparison, how they replace their current process.</p>
+
+      <h3>Show in This Order</h3>
+      <ol>
+        <li><strong>OpEx Planning page</strong> — show Progressive Disclosure: select a GL account, switch between methods. Demonstrate that only the relevant inputs appear per method. "Your team doesn't see line items that don't apply to their account."</li>
+        <li><strong>Line Item Detail</strong> — show vendor/functional area tagging on one account. "This is where they get granular — without a separate spreadsheet."</li>
+        <li><strong>Data load story</strong> — describe ADO: actuals come in from the ERP on a schedule via ADO pipelines. "The prior period closes, ADO runs, actuals are in — no manual upload."</li>
+        <li><strong>IS Variance Analysis</strong> — open the two-version comparison. Show how to switch versions and read the variance. "This is your AOP vs. forecast comparison. Already built."</li>
+        <li><strong>Version comparison workflow</strong> — briefly explain how versions are created in Admin and mapped across all 4 models.</li>
+      </ol>
+
+      <h3>What NOT to Show (Before Data Is Loaded)</h3>
+      <ul>
+        <li>Do not show a blank OpEx planning grid — every account should show prior period actuals for context</li>
+        <li>Do not show the ADO pipeline configuration screens — focus on the outcome (data arrives), not the plumbing</li>
+        <li>Do not show CapEx unless specifically asked — it adds complexity to an already content-rich demo</li>
+        <li>Do not show Currency Translation unless the customer is explicitly multi-currency</li>
+      </ul>
+
+      <h3>Three Key Proof Points</h3>
+      <ol>
+        <li><strong>Progressive Disclosure</strong> — planners only see the inputs relevant to their account's method; fewer errors, less training</li>
+        <li><strong>Automatic actuals refresh via ADO</strong> — no monthly upload task; prior period actuals flow in on schedule</li>
+        <li><strong>Built-in version comparison</strong> — AOP vs. forecast, forecast vs. prior forecast — no separate reporting layer needed</li>
+      </ol>
+
+      <h3>Common Objections + Factual Responses</h3>
+      <table>
+        <thead><tr><th>Objection</th><th>Factual Response</th></tr></thead>
+        <tbody>
+          <tr><td>"We need employee-level headcount, not just job levels."</td><td>IFP HC plans at job/role level with pay bands — which covers 90% of budget planning needs. For employee-level detail, IFP integrates with Operational Workforce Planning. The two systems share data via ADO.</td></tr>
+          <tr><td>"What if we need a custom planning method?"</td><td>IFP supports custom planning method extensions. The pattern is documented — add to the methods list, configure in the SYS module, wire the formula, assign to accounts. It's builder work, not custom development from scratch.</td></tr>
+          <tr><td>"How long does the actuals load take each month?"</td><td>ADO pipelines run on schedule — typically 15–60 minutes depending on data volume. Once configured, it runs unattended. The admin just confirms the data loaded correctly.</td></tr>
+          <tr><td>"Can our team still export to Excel?"</td><td>Anaplan supports native Excel export from any grid. For formatted reports, the management reporting pack exports to PDF. We'd scope exact export requirements during implementation.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Scenario 3 — IT / Architect</h2>
+      <p><strong>Audience:</strong> IT Director, Enterprise Architect, Integration Lead, CTO</p>
+      <p><strong>What they care about:</strong> How it's built, how data moves, what they'll need to maintain, security and compliance.</p>
+
+      <h3>Show in This Order</h3>
+      <ol>
+        <li><strong>Application Framework</strong> — open the Applications URL; show the wizard. "This is how the suite is deployed — a configuration wizard that generates all 4 models, UX pages, and ADO pipelines in one generation run. No model building from scratch."</li>
+        <li><strong>Four-model architecture</strong> — draw or show: Admin (central config), FP (financial planning), HC (headcount), CE (CapEx). "Admin is the hub. FP is the planning hub. HC and CE are spoke models that import into FP."</li>
+        <li><strong>ADO pipeline overview</strong> — open ADO; show the pipeline list. "Each pipeline is a lightweight extract-transform-load. No memory overhead in the Anaplan workspace — data stays in motion, not in memory."</li>
+        <li><strong>Polaris model architecture</strong> — explain: Polaris engine, 8-dimension limit, optimized for large data volumes vs. Classic engine. "This is not the same Anaplan model you may have seen in v1.x."</li>
+        <li><strong>Upgrade path</strong> — "Future versions of IFP are deployed via the Application Framework centrally. Customer doesn't rebuild — they apply the update. IT's maintenance burden is lower than a custom-built model."</li>
+      </ol>
+
+      <h3>What NOT to Show (Before Data Is Loaded)</h3>
+      <ul>
+        <li>Do not show planning pages to an IT audience — they are not the planning users and will focus on what's wrong with the UX</li>
+        <li>Do not dive into formula details unless specifically asked — stay at architecture level</li>
+        <li>Do not show Finance Analyst / CoPlanner — not GA</li>
+      </ul>
+
+      <h3>Three Key Proof Points</h3>
+      <ol>
+        <li><strong>Generated architecture</strong> — not a custom model; generated from configuration; consistent structure; easier to maintain and upgrade</li>
+        <li><strong>ADO: lightweight pipelines</strong> — no memory overhead in the workspace; data moves via lightweight pipelines, not Anaplan actions loading data into workspace memory</li>
+        <li><strong>Polaris: optimized for large data volumes</strong> — the engine is purpose-built for the data volumes typical in enterprise financial planning; 8-dimension constraint is the architectural trade-off</li>
+      </ol>
+
+      <h3>Common Objections + Factual Responses</h3>
+      <table>
+        <thead><tr><th>Objection</th><th>Factual Response</th></tr></thead>
+        <tbody>
+          <tr><td>"We can't use AWS. We're on Azure / private cloud."</td><td>ADO is an AWS-native service. IFP v2.0+ requires ADO. This is a hard stop — IFP cannot be deployed in non-AWS environments currently. We should stop and clarify your cloud requirements before proceeding.</td></tr>
+          <tr><td>"8 dimensions isn't enough for our data model."</td><td>The 8-dimension limit is a Polaris architecture constraint — it applies to all IFP models. If your implementation requires more than 8 dimensions, IFP is not the right fit. We'd need to review your dimension requirements in detail.</td></tr>
+          <tr><td>"How do we integrate with our ERP?"</td><td>ADO connects to your source systems via flat file or API. The typical pattern: ERP exports a flat file to a cloud storage location; ADO picks it up on a schedule and loads into the Admin model. Supported connectors include Snowflake, S3, and standard REST APIs.</td></tr>
+          <tr><td>"What's the ALM / promotion path from Dev to Prod?"</td><td>Standard Anaplan ALM — Dev model is the source; promote via the ALM UI or API to Prod. ADO pipelines are promoted separately. The Application Framework generates Dev; IT manages the ALM promotion as part of go-live.</td></tr>
+          <tr><td>"Who maintains this after go-live?"</td><td>The customer's admin team handles monthly tasks (period updates, version creation, data load confirmation). The partner handles major changes (new modules, extensions). Anaplan releases upgrades via the Application Framework — the admin applies them.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Demo Environment Prep Checklist</h2>
+      <ul class="checklist">
+        <li>Demo workspace is a Polaris workspace (confirm in workspace settings)</li>
+        <li>All 4 IFP models generated and published</li>
+        <li>Demo data loaded via ADO — actuals visible in planning grids</li>
+        <li>Current period set to July (gives a 6+6 split that looks complete on screen)</li>
+        <li>Versions set up: AOP Base, Current Forecast Base, Prior Forecast (minimum)</li>
+        <li>Management Reporting pack has data — open it and confirm it's not blank</li>
+        <li>Top-Down Summary has data in both target and bottom-up columns</li>
+        <li>IS Variance Analysis shows meaningful variances (not all zeros)</li>
+        <li>Review Known Limitations with the team before the call</li>
+        <li>Confirm customer is not a hard-stop case before proceeding</li>
+      </ul>
+
+<div class="prevnext-nav"><a class="prevnext-btn" href="./limitations.html">← Previous</a><a class="prevnext-btn" href="./inter-module-flows.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

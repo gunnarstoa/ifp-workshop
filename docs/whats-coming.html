@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's Coming — IFP v2.0 Workshop</title>
+  <title>What's Coming — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link active" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link active" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -57,31 +59,72 @@
   <main class="main-content">
     <div class="content-header">
       <h1>What's Coming</h1>
-      <p class="subtitle">Known v2.0 limitations, roadmap items, and ecosystem integrations</p>
-      <div class="badge-row"><span class="content-badge">Reference</span></div>
+      <p class="subtitle">Roadmap snapshot — GA items, coming soon, and ecosystem integrations</p>
+      <div class="badge-row"><span class="content-badge">Reference</span><span class="content-badge">Snapshot: March 2026</span></div>
     </div>
     <div class="content-body">
 
+      <div class="callout-important"><span class="callout-label">📅 Frozen Snapshot</span><p><strong>Snapshot as of: March 2026 workshop session.</strong> Roadmap dates shift. Confirm all timelines with the Apps team at <a href="mailto:financeapplications@anaplan.com">financeapplications@anaplan.com</a> before quoting to a prospect.</p></div>
 
-      <h2>Known V2.0.0 Limitations Targeted for Future Releases</h2>
-      <table><thead><tr><th>Limitation</th><th>Current Behavior</th><th>Planned Fix</th></tr></thead><tbody><tr><td>Top-Down dynamic disaggregation</td><td>Manual input at each level</td><td>To be reintroduced in a future release</td></tr><tr><td>Finance Analyst / CoPlanner</td><td>Embedded but pending full availability</td><td>Full GA release planned</td></tr><tr><td>ADO link failures</td><td>5 known broken links out of box</td><td>Fixes expected in future PAF releases</td></tr><tr><td>Dependent dropdowns</td><td>Don't generate consistently</td><td>No fix timeline — manual repair required</td></tr><tr><td>Line item codes not in generation</td><td>Must be populated manually</td><td>No fix expected near term</td></tr></tbody></table>
-      <h2>Ecosystem Integrations</h2>
-      <ul>
-        <li><strong>Operational Workforce Planning (OWP)</strong> — position/employee-level headcount detail; integrates natively with IFP HC</li>
-        <li><strong>Workforce Budgeting (WFB)</strong> — additional workforce planning capability (name TBC)</li>
-        <li><strong>Consensus Margin Planning (CMP)</strong> — revenue and margin planning from a commercial lens; feeds into IFP via DAT module</li>
-        <li><strong>Financial Consolidation</strong> — downstream from IFP for consolidation and disclosure management</li>
-      </ul>
+      <div class="callout-warning"><span class="callout-label">⚠ Quoting Roadmap Items</span><p>Do not quote roadmap items as committed delivery dates to customers or prospects. Mark all Coming Soon items as "planned, subject to change." When in doubt, say "I'll confirm with the Apps team."</p></div>
+
+      <h2>GA vs. Coming Soon</h2>
+      <table>
+        <thead><tr><th>Feature</th><th>Status</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Application Framework (PAF) — all 4 models</td><td>✅ GA</td><td>Admin, FP, HC, CE models all generated via wizard</td></tr>
+          <tr><td>Anaplan Data Orchestrator (ADO) integration</td><td>✅ GA</td><td>Replaces data hub; 5 links require manual creation post-generation</td></tr>
+          <tr><td>Polaris engine — all 4 models</td><td>✅ GA</td><td>Optimized for large data volumes; 8-dimension limit applies</td></tr>
+          <tr><td>Revenue &amp; COGS Planning</td><td>✅ GA</td><td>All planning methods available</td></tr>
+          <tr><td>Operating Expenses</td><td>✅ GA</td><td>Including allocations (basic methods only)</td></tr>
+          <tr><td>Headcount (job-level)</td><td>✅ GA</td><td>Employee-level requires OWP</td></tr>
+          <tr><td>CapEx Planning</td><td>✅ GA</td><td>Entity-level only; no employee-level</td></tr>
+          <tr><td>Balance Sheet &amp; Cash Flow</td><td>✅ GA</td><td>Including indirect cash flow, sub-schedules</td></tr>
+          <tr><td>Top-Down Planning</td><td>✅ GA</td><td>Manual target entry only — disaggregation not yet available</td></tr>
+          <tr><td>Reporting &amp; Analysis</td><td>✅ GA</td><td>IS, BS, CF reports + variance analysis + management reporting</td></tr>
+          <tr><td>Currency Translation</td><td>✅ GA</td><td>Spot, average, closing, historical, and blended rates</td></tr>
+          <tr><td>Multi-Currency (multi-entity)</td><td>✅ GA</td><td>Configured at generation time</td></tr>
+          <tr><td>Top-Down dynamic disaggregation</td><td>🔜 Coming Soon</td><td>Planned for future release; no date confirmed</td></tr>
+          <tr><td>Finance Analyst / CoPlanner</td><td>🔜 Coming Soon</td><td>Embedded in UX but not GA; do not scope or demo until confirmed</td></tr>
+          <tr><td>Waterfall / reciprocal allocations</td><td>🔜 Coming Soon</td><td>No timeline — custom development required for now</td></tr>
+          <tr><td>Employee-level CapEx</td><td>❌ Not planned</td><td>By design — use CE model for asset-level, OWP for employee-level</td></tr>
+          <tr><td>End-user Excel import templates</td><td>❌ Not planned</td><td>Removed in v2.0; all data entry via UX or ADO flat file</td></tr>
+        </tbody>
+      </table>
 
       <h2>Application Framework Roadmap</h2>
       <ul>
-        <li>Centralized upgrades mean customers receive IFP improvements without manual rebuilds</li>
+        <li>Centralized upgrades via PAF — customers receive IFP improvements without manual rebuilds</li>
         <li>Order Management team takes over Application Delivery process once all apps are on AAF</li>
         <li>Partner enablement materials updated with each major release</li>
+        <li>Generation issue fixes (dependent dropdowns, line item codes) targeted in future PAF releases</li>
       </ul>
 
+      <h2>Ecosystem Integrations</h2>
+      <p>These products are separate applications that integrate with IFP — they are not part of IFP itself.</p>
+      <table>
+        <thead><tr><th>Product</th><th>Status</th><th>What It Adds</th><th>Integration Pattern</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Operational Workforce Planning (OWP)</strong></td><td>✅ GA</td><td>Position and employee-level headcount detail</td><td>OWP → ADO → IFP HC DAT module</td></tr>
+          <tr><td><strong>Consensus Margin Planning (CMP)</strong></td><td>✅ GA</td><td>Revenue and margin planning from commercial/sales lens</td><td>CMP → ADO → IFP Revenue DAT module</td></tr>
+          <tr><td><strong>Financial Consolidation</strong></td><td>✅ GA</td><td>Statutory consolidation and disclosure management downstream of IFP</td><td>IFP → ADO → Financial Consolidation</td></tr>
+          <tr><td><strong>Workforce Budgeting (WFB)</strong></td><td>🔜 Coming Soon</td><td>Extended workforce cost budgeting — name TBC</td><td>Confirm integration pattern with Apps team</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout-note"><span class="callout-label">ℹ Hard-Stop Limitations</span><p>Exclusion criteria and known hard-stop limitations have moved to the <a href="./limitations.html">Known Limitations</a> page. Review that page with every customer before scoping.</p></div>
+
       <h2>Stay Current</h2>
-      <table><thead><tr><th>Resource</th><th>Where</th></tr></thead><tbody><tr><td>Release notes and application updates</td><td>Anaplan Community — community.anaplan.com</td></tr><tr><td>Updated partner training</td><td>Anaplan Enablement Portal</td></tr><tr><td>Finance Applications CoE</td><td>financeapplications@anaplan.com</td></tr><tr><td>General application questions</td><td>applications@anaplan.com</td></tr></tbody></table>
+      <table>
+        <thead><tr><th>Resource</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>Release notes and application updates</td><td>Anaplan Community — community.anaplan.com</td></tr>
+          <tr><td>Updated partner training</td><td>Anaplan Enablement Portal</td></tr>
+          <tr><td>Finance Applications CoE</td><td>financeapplications@anaplan.com</td></tr>
+          <tr><td>General application questions</td><td>applications@anaplan.com</td></tr>
+        </tbody>
+      </table>
+
 <div class="prevnext-nav"><a class="prevnext-btn" href="./inter-module-flows.html">← Previous</a><a class="prevnext-btn" href="./qanda.html">Next →</a></div>
     </div>
   </main>

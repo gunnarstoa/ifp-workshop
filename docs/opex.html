@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operating Expenses — IFP v2.0 Workshop</title>
+  <title>Operating Expenses — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -87,7 +89,11 @@
       </ul>
 
       <h2>Available Planning Methods</h2>
-      <table><thead><tr><th>Method</th><th>Description</th><th>Key Input</th></tr></thead><tbody><tr><td>Prior Run Rate</td><td>Prior period × (1 + growth %)</td><td>Growth %, # periods to go back, $ adjustment</td></tr><tr><td>Units x Rate</td><td>Units × rate</td><td>Units (e.g., hours), Rate, Adjustment</td></tr><tr><td>Rolling Moving Average</td><td>Average of N prior periods</td><td># periods for average</td></tr><tr><td>Direct Input</td><td>Manual monthly entry</td><td>Enter amounts directly</td></tr><tr><td>$ Amount Growth</td><td>Prior period + $ growth amount</td><td>Growth amount</td></tr><tr><td>Fixed Average</td><td>Fixed average over N periods</td><td># periods</td></tr><tr><td>Line Item Detail</td><td>Amounts from Line Item Detail page</td><td>Entered on Line Item Detail page</td></tr><tr><td>Planned in CapEx</td><td>Auto from CE model — data entry disabled</td><td>(none)</td></tr><tr><td>Planned in Headcount</td><td>Auto from HC model — data entry disabled</td><td>(none)</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/operating-expenses-2.jpg" alt="OpEx Planning page — Prior Run Rate method with growth % input" class="screenshot-img" loading="lazy"><figcaption>OpEx Planning page — Prior Run Rate method with growth % input</figcaption></figure><div class="callout-warning"><span class="callout-label">⚠ Cross-Model Imports</span><p>After changes in HC or CapEx models, you MUST run FIN – Import from HC Model and FIN – Import from CapEx Model. Data does NOT sync automatically. If OpEx values don't reflect HC or CapEx updates, this is always the first thing to check.</p></div>
+      <table><thead><tr><th>Method</th><th>Description</th><th>Key Input</th></tr></thead><tbody><tr><td>Prior Run Rate</td><td>Prior period × (1 + growth %)</td><td>Growth %, # periods to go back, $ adjustment</td></tr><tr><td>Units x Rate</td><td>Units × rate</td><td>Units (e.g., hours), Rate, Adjustment</td></tr><tr><td>Rolling Moving Average</td><td>Average of N prior periods</td><td># periods for average</td></tr><tr><td>Direct Input</td><td>Manual monthly entry</td><td>Enter amounts directly</td></tr><tr><td>$ Amount Growth</td><td>Prior period + $ growth amount</td><td>Growth amount</td></tr><tr><td>Fixed Average</td><td>Fixed average over N periods</td><td># periods</td></tr><tr><td>Line Item Detail</td><td>Amounts from Line Item Detail page</td><td>Entered on Line Item Detail page</td></tr><tr><td>Planned in CapEx</td><td>Auto from CE model — data entry disabled</td><td>(none)</td></tr><tr><td>Planned in Headcount</td><td>Auto from HC model — data entry disabled</td><td>(none)</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/operating-expenses-1.jpg" alt="OpEx module — account list with planning method dropdown and current period actuals" class="screenshot-img" loading="lazy"><figcaption>OpEx account list — each GL account shows its assigned planning method and current period actuals for reference</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/operating-expenses-2.jpg" alt="OpEx Planning page — Prior Run Rate method with growth % input" class="screenshot-img" loading="lazy"><figcaption>Prior Run Rate method — enter growth % and number of periods back; system calculates the forecast automatically</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/operating-expenses-3.jpg" alt="OpEx Planning — Units x Rate method showing rate and volume inputs per account" class="screenshot-img" loading="lazy"><figcaption>Units x Rate method — separate inputs for volume (e.g. hours) and rate; system multiplies to produce the forecast</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/operating-expenses-4.jpg" alt="OpEx Line Item Detail page — vendor/functional area breakdown per expense account" class="screenshot-img" loading="lazy"><figcaption>Line Item Detail — enter individual expense items with vendor and functional area tags; summarizes back to the account</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/operating-expenses-5.jpg" alt="OpEx Allocations page — allocation rule configuration showing source account and target accounts" class="screenshot-img" loading="lazy"><figcaption>Allocations setup — define source account, target accounts, and allocation method; runs after planning is complete</figcaption></figure><div class="callout-warning"><span class="callout-label">⚠ Cross-Model Imports</span><p>After changes in HC or CapEx models, you MUST run FIN – Import from HC Model and FIN – Import from CapEx Model. Data does NOT sync automatically. If OpEx values don't reflect HC or CapEx updates, this is always the first thing to check.</p></div>
       <h2>Line Item Detail</h2>
       <ul>
         <li>Enter description, then specify extra dimensions (vendor, functional area, geography)</li>

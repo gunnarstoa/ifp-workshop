@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Headcount Planning — IFP v2.0 Workshop</title>
+  <title>Headcount Planning — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -90,7 +92,8 @@
       </ol>
 
       <h2>Job Metadata</h2>
-      <figure class="screenshot-figure"><img src="../img/headcount-2.jpg" alt="HC – Job Metadata page showing job list with grade, employment type, active status" class="screenshot-img" loading="lazy"><figcaption>HC – Job Metadata page showing job list with grade, employment type, active status</figcaption></figure>
+      <figure class="screenshot-figure"><img src="../img/headcount-1.jpg" alt="Headcount module — HC Admin setup screen showing structure tabs: Jobs, Pay Bands, Benefits, Payroll Attributes" class="screenshot-img" loading="lazy"><figcaption>HC Admin landing — four setup tabs must be completed in sequence before any planning; Jobs first, then Pay Bands, then Benefits, then Payroll Attributes</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/headcount-2.jpg" alt="HC – Job Metadata page showing job list with grade, employment type, active status" class="screenshot-img" loading="lazy"><figcaption>HC Job Metadata — each job record has a grade, employment type (FTE/contractor), and active flag; inactive jobs are hidden from planning pages</figcaption></figure>
       <p>Required fields for a valid job: <strong>Job Code · Display Name · Job Parent · Job Grade · Employment Type · Active = TRUE</strong>. Jobs with missing fields are marked Invalid and won't appear in planning grids.</p>
 
       <h2>Job to Department Mapping</h2>
@@ -117,7 +120,9 @@
       </ul>
 
       <h2>Headcount Planning</h2>
-      <figure class="screenshot-figure"><img src="../img/headcount-4.jpg" alt="HC – Planning page showing hires, exits, and transfers by job per department" class="screenshot-img" loading="lazy"><figcaption>HC – Planning page showing hires, exits, and transfers by job per department</figcaption></figure>
+      <figure class="screenshot-figure"><img src="../img/headcount-4.jpg" alt="HC – Planning page showing hires, exits, and transfers by job per department" class="screenshot-img" loading="lazy"><figcaption>HC Planning — enter planned hires, exits, and transfers for each job role; system tracks opening and closing headcount position count automatically</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/headcount-5.jpg" alt="HC – Cost Summary page showing total compensation cost by department rolled into FP model" class="screenshot-img" loading="lazy"><figcaption>HC Cost Summary — total compensation cost (salary + benefits + payroll taxes) by department; runs import to push these costs into the FP model</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/headcount-6.jpg" alt="HC to FP model sync — FIN Import from HC Model action result confirmation" class="screenshot-img" loading="lazy"><figcaption>HC → FP sync — after running the import action, verify the OpEx accounts tagged 'Planned in Headcount' reflect the latest HC amounts in the FP model</figcaption></figure>
       <ul>
         <li>Manual entry: Hires · Exits · Transfers In/Out — by month for plan period</li>
         <li>Attrition is assumption-based (parameter), not manual</li>

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Common Extensions — IFP v2.0 Workshop</title>
+  <title>Common Extensions — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link active" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -83,6 +85,7 @@
       <table><thead><tr><th>Scenario</th><th>Approach</th></tr></thead><tbody><tr><td>Need a new planning method</td><td>Extend — add to Planning Methods list, configure SYS module, add line items, update LISS</td></tr><tr><td>Need basic allocations</td><td>Configure — built in out of the box</td></tr><tr><td>Need sophisticated allocations (waterfalls, multi-step)</td><td>Extend to Profitability application — integrates with IFP</td></tr><tr><td>Need more than 8 dimensions</td><td>Bespoke model build — cannot configure within IFP hard limit</td></tr><tr><td>Need CapEx by department</td><td>Extend — entity-to-dept mapping in General Admin for simple cases</td></tr><tr><td>Need employee-level HC detail</td><td>Extend to OWP or WFB — both integrate natively with IFP HC</td></tr><tr><td>Need external revenue planning</td><td>Configure — 'In another model → load to FP' option + DAT Margin Planning Import module</td></tr></tbody></table>
       <h2>Creating a Custom Planning Method: Headcount × Rate</h2>
       <p>This example creates a method that drives expense from HC data — eliminating double-entry for headcount-driven expenses.</p>
+      <div class="screenshot-placeholder"><div class="ss-icon">📸</div><div class="ss-label">[SCREENSHOT NEEDED: Custom planning method creation — SYS by Planning Methods module showing new method entry]</div><div class="ss-desc">Capture the SYS by Planning Methods list module with a new custom method row added — show the code, description, and business area fields</div></div>
       <ol>
         <li><strong>Add to Planning Methods list</strong> — create new entry with unique code</li>
         <li><strong>Configure in SYS by Planning Methods</strong> — set business area (expense/margin/BS), add description (shown as context help to users)</li>

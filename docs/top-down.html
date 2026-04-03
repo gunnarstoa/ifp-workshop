@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top-Down Planning — IFP v2.0 Workshop</title>
+  <title>Top-Down Planning — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -85,7 +87,9 @@
       <p>All targets are entered at <strong>Level 2</strong> of each dimension hierarchy. In USD — can be reported in local currency.</p>
 
       <h2>Process Pages</h2>
-      <table><thead><tr><th>Page</th><th>Purpose</th></tr></thead><tbody><tr><td>TD – Planning</td><td>Manual input of all targets by dimension at L2</td></tr><tr><td>TD – Summary</td><td>Targets vs. bottom-up plans side-by-side; variance calculations at L2</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/top-down-planning-2.jpg" alt="Top-Down Planning page — showing revenue and gross profit target inputs" class="screenshot-img" loading="lazy"><figcaption>Top-Down Planning page — showing revenue and gross profit target inputs</figcaption></figure>
+      <table><thead><tr><th>Page</th><th>Purpose</th></tr></thead><tbody><tr><td>TD – Planning</td><td>Manual input of all targets by dimension at L2</td></tr><tr><td>TD – Summary</td><td>Targets vs. bottom-up plans side-by-side; variance calculations at L2</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/top-down-planning-1.jpg" alt="Top-Down Planning — target entry screen showing dimension selector at entity/L2 level" class="screenshot-img" loading="lazy"><figcaption>Top-Down target entry — targets entered at L2 entity level for each metric; system does NOT auto-disaggregate to lower levels (manual distribution required)</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/top-down-planning-2.jpg" alt="Top-Down Planning page — showing revenue and gross profit target inputs" class="screenshot-img" loading="lazy"><figcaption>TD Planning page — enter revenue, gross profit, OpEx, and FTE targets; each metric has its own row with monthly columns</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/top-down-planning-3.jpg" alt="Top-Down Summary — targets vs. bottom-up side-by-side with variance row at entity level" class="screenshot-img" loading="lazy"><figcaption>TD Summary — executive view comparing submitted targets against bottom-up plan; red variance rows highlight gaps that require discussion</figcaption></figure>
       <h2>Why Targets Don't Show on Module Summary Pages</h2>
       <p>By design — the OpEx Summary, Revenue Summary, etc. don't show TD targets. Reason: users viewing those pages may be at a more granular level (L3 entity, cost center) than the L2 targets, creating confusion. All target vs. actual comparison is consolidated on the TD pages at consistent L2.</p>
 

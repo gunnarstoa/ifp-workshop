@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revenue & COGS Planning — IFP v2.0 Workshop</title>
+  <title>Revenue & COGS Planning — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -88,7 +90,10 @@
       </ul>
 
       <h2>Common Product Planning Setups</h2>
-      <table><thead><tr><th>Product Type</th><th>Accounts Used</th><th>Typical Method</th><th>Inputs</th></tr></thead><tbody><tr><td>Physical Products</td><td>Product Sales + COGS</td><td>Units x Rate</td><td>Units sold + price per unit</td></tr><tr><td>Services / Consulting</td><td>Services Sales + Services COGS</td><td>Units x Rate</td><td>Hours x rate per hour</td></tr><tr><td>SaaS / Subscription</td><td>Subscription Sales + Sub COGS</td><td>Units x Rate</td><td>Subscriptions x rate per subscription</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/revenue-cogs-planning-2.jpg" alt="Revenue & COGS Planning page — showing Units x Rate method inputs" class="screenshot-img" loading="lazy"><figcaption>Revenue & COGS Planning page — showing Units x Rate method inputs</figcaption></figure>
+      <table><thead><tr><th>Product Type</th><th>Accounts Used</th><th>Typical Method</th><th>Inputs</th></tr></thead><tbody><tr><td>Physical Products</td><td>Product Sales + COGS</td><td>Units x Rate</td><td>Units sold + price per unit</td></tr><tr><td>Services / Consulting</td><td>Services Sales + Services COGS</td><td>Units x Rate</td><td>Hours x rate per hour</td></tr><tr><td>SaaS / Subscription</td><td>Subscription Sales + Sub COGS</td><td>Units x Rate</td><td>Subscriptions x rate per subscription</td></tr></tbody></table><figure class="screenshot-figure"><img src="../img/revenue-cogs-planning-1.jpg" alt="Revenue & COGS — account selector showing product and customer dimension filters" class="screenshot-img" loading="lazy"><figcaption>Revenue account selector — filter by product, customer, and entity; navigate between accounts using the dropdown or page grid</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/revenue-cogs-planning-2.jpg" alt="Revenue & COGS Planning page — showing Units x Rate method inputs" class="screenshot-img" loading="lazy"><figcaption>Units x Rate method — enter volume (units sold, subscriptions, or hours) and rate separately; system calculates revenue and auto-applies the COGS margin</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/revenue-cogs-planning-3.jpg" alt="Revenue & COGS — Prior Run Rate method with growth percentage and adjustment inputs" class="screenshot-img" loading="lazy"><figcaption>Prior Run Rate method — pulls the prior period actuals and applies the entered growth %; use the $ Adjustment for known one-time items</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/revenue-cogs-planning-4.jpg" alt="Revenue Summary page — total revenue and gross margin by product line with variance vs. prior year" class="screenshot-img" loading="lazy"><figcaption>Revenue Summary — roll-up view across all product lines showing revenue, COGS, and gross margin; compare against prior year actuals or AOP</figcaption></figure>
       <h2>Available Planning Methods</h2>
       <table><thead><tr><th>Method</th><th>Description</th><th>Best For</th></tr></thead><tbody><tr><td>Units x Rate</td><td>Revenue = Units × Rate</td><td>Physical products, services (hours × rate), subscriptions</td></tr><tr><td>Direct Input</td><td>Enter amounts manually</td><td>Simple or non-driver-based accounts</td></tr><tr><td>Prior Run Rate</td><td>Prior period × (1 + growth %)</td><td>Stable recurring revenue</td></tr><tr><td>Rolling Moving Average</td><td>Average of prior N periods</td><td>Smoothed trend forecasting</td></tr><tr><td>COGS % of Revenue</td><td>COGS = Revenue × user-defined %</td><td>Margin-driven COGS accounts</td></tr></tbody></table><div class="callout-warning"><span class="callout-label">⚠ Department Selector Matters</span><p>If you select a product but see no data, check your department selector. Service revenue may only appear under Professional Services, not Sales. This is expected behavior — not a bug.</p></div>
       <h2>Process Pages</h2>

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balance Sheet & Cash Flow — IFP v2.0 Workshop</title>
+  <title>Balance Sheet & Cash Flow — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -93,7 +95,11 @@
 
       <h2>End-User Planning Pages</h2>
       <h3>BS – Account Planning</h3>
-      <figure class="screenshot-figure"><img src="../img/balance-sheet-planning-2.jpg" alt="BS Account Planning page — showing DSO input for Accounts Receivable" class="screenshot-img" loading="lazy"><figcaption>BS Account Planning page — showing DSO input for Accounts Receivable</figcaption></figure>
+      <figure class="screenshot-figure"><img src="../img/balance-sheet-planning-1.jpg" alt="Balance Sheet — FIN BS Manage Cash Offset Accounts mapping screen" class="screenshot-img" loading="lazy"><figcaption>Cash Offset Accounts setup — every BS account must be mapped here; missing entries break the cash flow statement</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/balance-sheet-planning-2.jpg" alt="BS Account Planning page — showing DSO input for Accounts Receivable" class="screenshot-img" loading="lazy"><figcaption>BS Account Planning — DSO method for Accounts Receivable; system calculates the balance from revenue and days outstanding</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/balance-sheet-planning-3.jpg" alt="BS Investments sub-schedule — new investment entry with amount, start date, rate, and IS/BS/CF impact preview" class="screenshot-img" loading="lazy"><figcaption>BS Investments sub-schedule — enter investment details and preview the full financial statement impact before saving</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/balance-sheet-planning-4.jpg" alt="BS Leases sub-schedule — capital and operating lease detail entry" class="screenshot-img" loading="lazy"><figcaption>BS Leases — enter lease term, amount, and type; system calculates ROU asset, liability, and P&amp;L impact automatically</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/balance-sheet-planning-5.jpg" alt="BS Balancing Routine — balance check showing Assets = Liabilities + Equity with green validation" class="screenshot-img" loading="lazy"><figcaption>Balancing Routine — run after each planning cycle to confirm Assets = Liabilities + Equity; red cells indicate mismatches to investigate</figcaption></figure>
       <ul>
         <li>Entity level only — no department or operational dimensions</li>
         <li>Dynamic inputs based on planning method (DSO → enter days; Direct → enter activity amounts)</li>

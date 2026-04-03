@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Known Limitations — IFP v2.1 Workshop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-header">
+    <button id="hamburger">☰</button>
+    <span>IFP v2.1 Workshop</span>
+  </div>
+
+  <nav class="sidebar">
+  <div class="sidebar-header">
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
+  </div>
+  <ul class="nav-list">
+        <li class="nav-section-title">Getting Started</li>
+        <li><a class="nav-link" href="./overview.html">Workshop Overview</a></li>
+        <li><a class="nav-link" href="./case-study.html">Case Study: FictoCorp</a></li>
+        <li><a class="nav-link" href="./ifp-overview.html">IFP Suite Overview</a></li>
+        <li><a class="nav-link" href="./anaplan-way.html">Anaplan Way for Apps</a></li>
+        <li class="nav-section-title">Module 1 — Platform Foundations</li>
+        <li><a class="nav-link" href="./app-framework.html">Application Framework</a></li>
+        <li><a class="nav-link" href="./ado-overview.html">Anaplan Data Orchestrator</a></li>
+        <li><a class="nav-link" href="./model-architecture.html">Model Architecture</a></li>
+        <li class="nav-section-title">Module 2 — Configuration Workshop</li>
+        <li><a class="nav-link" href="./config-walkthrough.html">App Framework Walkthrough</a></li>
+        <li><a class="nav-link" href="./lab-a.html">Lab A: Configure FictoCorp</a></li>
+        <li><a class="nav-link" href="./post-generation.html">Post-Generation Checklist</a></li>
+        <li><a class="nav-link" href="./data-load-ado.html">Data Load via ADO</a></li>
+        <li><a class="nav-link" href="./lab-b.html">Lab B: Full 3-Statement</a></li>
+        <li class="nav-section-title">Module 3 — Module Walkthroughs</li>
+        <li><a class="nav-link" href="./revenue-cogs.html">Revenue &amp; COGS Planning</a></li>
+        <li><a class="nav-link" href="./opex.html">Operating Expenses</a></li>
+        <li><a class="nav-link" href="./headcount.html">Headcount Planning</a></li>
+        <li><a class="nav-link" href="./capex.html">CapEx Planning</a></li>
+        <li><a class="nav-link" href="./balance-sheet.html">Balance Sheet &amp; Cash Flow</a></li>
+        <li><a class="nav-link" href="./top-down.html">Top-Down Planning</a></li>
+        <li><a class="nav-link" href="./reporting.html">Reporting &amp; Analysis</a></li>
+        <li class="nav-section-title">Module 4 — Admin &amp; Extensions</li>
+        <li><a class="nav-link" href="./admin-runbook.html">Admin Runbook</a></li>
+        <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
+        <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
+        <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link active" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
+        <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
+        <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
+        <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
+        <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
+        <li><a class="nav-link" href="./facilitator.html">Facilitator Guide</a></li>
+      </ul>
+    </nav>
+
+  <main class="main-content">
+    <div class="content-header">
+      <h1>Known Limitations</h1>
+      <p class="subtitle">Hard stops, workarounds, and fix timelines — review before scoping</p>
+      <div class="badge-row"><span class="content-badge">Reference</span><span class="content-badge">Pre-Sales</span></div>
+    </div>
+    <div class="content-body">
+
+      <div class="callout-important"><span class="callout-label">🚨 Scope Review Required</span><p>Review every limitation in this table with the customer before scoping the engagement — not after. Hard-stop limitations (High severity with no workaround) must be resolved before proceeding to a Statement of Work.</p></div>
+
+      <h2>Limitation Reference Table</h2>
+      <table>
+        <thead><tr><th>Limitation</th><th>Severity</th><th>Workaround</th><th>Fix Timeline</th></tr></thead>
+        <tbody>
+          <tr><td><strong>BYOK requirement (AWS)</strong> — Some customers require Bring Your Own Key encryption on public cloud. ADO requires AWS and cannot be deployed in private/sovereign environments.</td><td><span style="color:#dc2626;font-weight:600">High</span></td><td>None — ADO is an AWS-native service. Customer must be willing to use AWS-hosted ADO or IFP is not suitable.</td><td>No change planned</td></tr>
+          <tr><td><strong>AWS dependency</strong> — Customers who cannot use AWS (public sector, federal, sovereign cloud) cannot use ADO and therefore cannot use IFP v2.0+.</td><td><span style="color:#dc2626;font-weight:600">High</span></td><td>None. This is a hard stop. Do not scope IFP for these customers.</td><td>No change planned</td></tr>
+          <tr><td><strong>8-dimension limit on Polaris models</strong> — The Polaris engine enforces a hard limit of 8 dimensions per model. Customers with complex dimensional structures may exceed this.</td><td><span style="color:#dc2626;font-weight:600">High</span></td><td>Reduce dimensions to fit within 8. Entity and Time always count. If customer requires &gt;6 additional dimensions, IFP is not suitable.</td><td>No change planned near term</td></tr>
+          <tr><td><strong>Top-Down disaggregation not available</strong> — Executive targets entered at L2 level cannot be automatically disaggregated to lower levels. Users must manually distribute targets.</td><td><span style="color:#f59e0b;font-weight:600">Medium</span></td><td>Manual target distribution at each level. Plan extra configuration and training time for this workflow.</td><td>Planned for future release — no date confirmed</td></tr>
+          <tr><td><strong>Finance Analyst / CoPlanner pending GA</strong> — Embedded but not yet fully released. Functionality is visible in the UX but behavior may change before GA.</td><td><span style="color:#f59e0b;font-weight:600">Medium</span></td><td>Do not demo or scope Finance Analyst / CoPlanner features until GA is confirmed. Do not include in SOW scope.</td><td>GA planned — confirm current status with Apps team</td></tr>
+          <tr><td><strong>CapEx entity-level only</strong> — Capital expense planning is at the entity level only. No employee-level or project-level CapEx planning is supported.</td><td><span style="color:#f59e0b;font-weight:600">Medium</span></td><td>Use GL-level OpEx planning for project-level CapEx tracking. Dedicated CE model handles asset-level detail at entity only.</td><td>No change planned</td></tr>
+          <tr><td><strong>No employee-level headcount</strong> — HC planning is job-role based, not employee-based. Individual employee records require OWP integration.</td><td><span style="color:#f59e0b;font-weight:600">Medium</span></td><td>Scope OWP alongside IFP for employee-level detail. IFP HC provides job/grade-level planning which satisfies most FP&amp;A use cases.</td><td>By design — use OWP for employee-level</td></tr>
+          <tr><td><strong>5 ADO links broken out of box</strong> — Five known ADO pipeline links are missing or broken after generation: Vendor Hierarchy (FP), and SYS by J2/J3/J4 Job + Job Grade (HC).</td><td><span style="color:#f59e0b;font-weight:600">Medium</span></td><td>Create these links manually using the ADO manual setup steps in the Configuration Guide. Budget 30–60 minutes for this task during post-generation.</td><td>Fix expected in future PAF release</td></tr>
+          <tr><td><strong>Basic allocations only</strong> — OpEx allocations support simple percentage-based or amount-based rules. Waterfall and reciprocal allocation methods are not available.</td><td><span style="color:#6b7280;font-weight:600">Low</span></td><td>Use manual workarounds for complex cost allocation. Scope custom development if waterfall or reciprocal allocations are required.</td><td>No timeline</td></tr>
+          <tr><td><strong>End-user import templates removed in v2.0</strong> — The Excel-based data entry templates from v1.x are not available in v2.0. All data entry is via the Anaplan UX.</td><td><span style="color:#6b7280;font-weight:600">Low</span></td><td>Use native Anaplan UX for all data entry. For bulk uploads, use ADO-based flat file import pipelines.</td><td>Not planned for reintroduction</td></tr>
+          <tr><td><strong>Dependent dropdowns inconsistent in generation</strong> — Dependent dropdown UX behavior does not always generate correctly. Pages may show all options rather than filtered options.</td><td><span style="color:#6b7280;font-weight:600">Low</span></td><td>Repair manually after generation by configuring the dropdown filter in the Page Builder. Typically 15–30 minutes per affected page.</td><td>No fix timeline — manual repair required</td></tr>
+          <tr><td><strong>Line item codes not in generation</strong> — Line item codes must be populated manually after generation. They do not auto-populate from the configuration answers.</td><td><span style="color:#6b7280;font-weight:600">Low</span></td><td>Populate line item codes from the template model post-generation. Budget time for this in the post-generation checklist.</td><td>No fix expected near term</td></tr>
+          <tr><td><strong>Naming mismatches in generation</strong> — If entity dimension name in configuration questions doesn't exactly match the hierarchy rename, modules and line items may not rename correctly throughout the model.</td><td><span style="color:#6b7280;font-weight:600">Low</span></td><td>Ensure exact name match (including capitalization) between the question response and hierarchy rename field. Review the generation log for naming errors immediately after generation.</td><td>By design — requires careful configuration</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Exclusion Checklist</h2>
+      <p>Before scoping IFP v2.1, confirm the customer does <strong>NOT</strong> have any of the following hard stops:</p>
+      <ul class="checklist">
+        <li>Requires BYOK encryption on public cloud infrastructure</li>
+        <li>Cannot use AWS-hosted services (public sector, federal, sovereign cloud)</li>
+        <li>Requires more than 8 dimensions in any planning model</li>
+        <li>Requires employee-level CapEx or headcount planning without OWP</li>
+        <li>Requires waterfall or reciprocal cost allocation out of box</li>
+      </ul>
+      <p>If any box cannot be unchecked, stop and engage the Apps team before proceeding.</p>
+
+      <h2>Ecosystem Gap Coverage</h2>
+      <table>
+        <thead><tr><th>Gap</th><th>Solution</th><th>Integration Pattern</th></tr></thead>
+        <tbody>
+          <tr><td>Employee-level headcount</td><td>Operational Workforce Planning (OWP)</td><td>OWP → ADO → IFP HC DAT module</td></tr>
+          <tr><td>Commercial revenue planning</td><td>Consensus Margin Planning (CMP)</td><td>CMP → ADO → IFP Revenue DAT module</td></tr>
+          <tr><td>Consolidation and statutory reporting</td><td>Financial Consolidation</td><td>IFP → ADO → Financial Consolidation</td></tr>
+          <tr><td>Extended workforce budgeting</td><td>Workforce Budgeting (WFB)</td><td>Confirm integration pattern with Apps team</td></tr>
+        </tbody>
+      </table>
+
+<div class="prevnext-nav"><a class="prevnext-btn" href="./inter-module-flows.html">← Previous</a><a class="prevnext-btn" href="./presales-demo.html">Next →</a></div>
+    </div>
+  </main>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

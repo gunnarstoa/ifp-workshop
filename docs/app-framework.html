@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anaplan Application Framework — IFP v2.0 Workshop</title>
+  <title>Anaplan Application Framework — IFP v2.1 Workshop</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="mobile-header">
     <button id="hamburger">☰</button>
-    <span>IFP v2.0 Workshop</span>
+    <span>IFP v2.1 Workshop</span>
   </div>
 
   <nav class="sidebar">
   <div class="sidebar-header">
-  <div class="sidebar-title">IFP v2.0 Workshop</div>
+  <div class="sidebar-title">IFP v2.1 Workshop</div>
   </div>
   <ul class="nav-list">
         <li class="nav-section-title">Getting Started</li>
@@ -45,8 +45,10 @@
         <li><a class="nav-link" href="./currency-translation.html">Currency Translation</a></li>
         <li><a class="nav-link" href="./extensions.html">Common Extensions</a></li>
         <li class="nav-section-title">Reference</li>
+        <li><a class="nav-link" href="./limitations.html">Known Limitations</a></li>
+        <li><a class="nav-link" href="./presales-demo.html">Pre-Sales Demo Playbook</a></li>
         <li><a class="nav-link" href="./inter-module-flows.html">Inter-Module Data Flows</a></li>
-        <li><a class="nav-link" href="./whats-coming.html">What's Coming</a></li>
+        <li><a class="nav-link" href="./whats-coming.html">What&#39;s Coming</a></li>
         <li><a class="nav-link" href="./qanda.html">Q&amp;A from Sessions</a></li>
         <li><a class="nav-link" href="./resources.html">Resources &amp; Downloads</a></li>
         <li><a class="nav-link" href="./glossary.html">Glossary</a></li>
@@ -90,7 +92,8 @@
       <h2>The Four Generated Models</h2>
       <table><thead><tr><th>Model</th><th>Purpose</th><th>Always Generated?</th></tr></thead><tbody><tr><td>Admin</td><td>Central configuration layer — source-to-planning mappings, metadata</td><td>Yes — always</td></tr><tr><td>Financial Planning (FP)</td><td>Revenue/COGS, OpEx, Balance Sheet, Cash Flow, Top-Down, Reporting</td><td>Yes — always</td></tr><tr><td>Headcount (HC)</td><td>Job-level workforce planning and cost calculations</td><td>Yes — delete if choosing GL-level option</td></tr><tr><td>Capital Expense (CE)</td><td>Asset planning, depreciation, disposal modeling</td><td>Yes — delete if choosing GL-level option</td></tr></tbody></table><div class="callout-warning"><span class="callout-label">⚠ Cannot Exclude Models from Generation</span><p>The Application Framework always generates all 4 models. If you choose GL-level planning for HC or CapEx instead of the dedicated model, the model is still generated — you must delete it manually after generation.</p></div>
       <h2>Configuration Question Structure</h2>
-      <figure class="screenshot-figure"><img src="../img/introduction-and-navigation-2.jpg" alt="IFP v2.0 UX — page navigation structure showing module categories" class="screenshot-img" loading="lazy"><figcaption>IFP v2.0 UX — page navigation structure showing module categories</figcaption></figure>
+      <figure class="screenshot-figure"><img src="../img/introduction-and-navigation-1.jpg" alt="IFP Application Framework — Applications URL landing page with available applications listed" class="screenshot-img" loading="lazy"><figcaption>Application Framework entry point — navigate to the Applications URL in your tenant; IFP appears as a deployable application once provisioned</figcaption></figure>
+<figure class="screenshot-figure"><img src="../img/introduction-and-navigation-2.jpg" alt="IFP v2.0 UX — page navigation structure showing module categories" class="screenshot-img" loading="lazy"><figcaption>Generated UX navigation — after generation, the sidebar shows all configured modules; hidden modules do not appear here</figcaption></figure>
       <p>The wizard has two layers:</p>
       <ol>
         <li><strong>Top-Level Questions</strong> — define foundational structure across all 4 models: which dimensions to include, which modules to deploy, multi-currency, headcount approach, CapEx approach</li>
